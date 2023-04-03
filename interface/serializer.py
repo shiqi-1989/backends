@@ -125,7 +125,7 @@ class ReportModelSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         data = super().to_representation(instance)
-        data['url'] = f"http://{MY_HOST}:{MY_PORT}/interface/reportDetail/{data['title']}"
+        data['url'] = f"http://{MY_HOST}:{MY_PORT}/interface/report/get_detail?title={data['title']}"
         return data
 
 

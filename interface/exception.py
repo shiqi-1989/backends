@@ -23,13 +23,10 @@ def exception_handler(exc, context):
             else:
                 # print(exc.detail.items())
                 # print("**************************************")
-                print(f"exc:{exc.detail}")
-                try:
-                    errors_data = {k: v[0] for k, v in exc.detail.items()}
-                    errors = errors_data['messages']['message']
-                except Exception as e:
-                    print(e.__str__())
-                    errors = "".join([k + v[0] for k, v in exc.detail.items()])
+                # print(f"exc:{exc.detail}")
+                errors_data = {k: v[0] for k, v in exc.detail.items()}
+                errors = "".join([k + v[0] for k, v in exc.detail.items()])
+                # errors = errors_data['messages']['message']
         else:
             errors = exc.detail
 

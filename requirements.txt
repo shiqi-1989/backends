@@ -6,10 +6,9 @@ djangorestframework_simplejwt==5.2.2
 drf_yasg==1.21.4
 httpx==0.23.3
 jsonpath==0.82
-orjson==3.8.9
+orjson==3.8.5
 PyMySQL==1.0.2
 requests==2.28.2
-rest_framework_simplejwt==0.0.2
 ujson==5.7.0
 urllib3==1.26.14
-XTestRunner==1.5.2
+XTestRunner==1.5.0

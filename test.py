@@ -1,4 +1,2 @@
-a = 6
-v = "q2wqe"
-print(str(a))
-print(str(v))
+assert 2 > 1
+assert 2 in '222'
