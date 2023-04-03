@@ -1,0 +1,53 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CssBrowserCompatibilityForProperties" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="CssConvertColorToHexInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="CssConvertColorToRgbInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="CssMissingSemicolon" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="111" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="HtmlNonExistentInternetResource" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlPresentationalElement" enabled="true" level="INFORMATION" enabled_by_default="true" />
+    <inspection_tool class="HtmlRequiredSummaryAttribute" enabled="true" level="INFORMATION" enabled_by_default="true" />
+    <inspection_tool class="HtmlRequiredTitleAttribute" enabled="true" level="INFORMATION" enabled_by_default="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="5">
+            <item index="0" class="java.lang.String" itemvalue="chardet" />
+            <item index="1" class="java.lang.String" itemvalue="Django" />
+            <item index="2" class="java.lang.String" itemvalue="requests" />
+            <item index="3" class="java.lang.String" itemvalue="PyMySQL" />
+            <item index="4" class="java.lang.String" itemvalue="djangorestframework" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N803" />
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="backends.interface.models.Case.objects" />
+          <option value="backends.interface.models.Api.objects" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+      <option name="processCode" value="true" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
+    </inspection_tool>
+    <inspection_tool class="Stylelint" enabled="true" level="ERROR" enabled_by_default="true" />
+  </profile>
+</component>
