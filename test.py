@@ -1,2 +1,9 @@
-assert 2 > 1
-assert 2 in '222'
+dic = {
+    'a': 1,
+    'b': 2
+}
+
+print(dic)
+a = dic.pop('c')
+print(dic)
+print(a)

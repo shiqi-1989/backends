@@ -664,14 +664,9 @@ class FunctionAssistant(MyModelViewSet):
 
     @action(methods=['get'], detail=False)
     def fun_list(self, request, *args, **kwargs):
-        fun_list = [x for x in dir(fun_test) if x.startswith('__') and not x.endswith("__")]
-        fun_info = []
-        for i in fun_list:
-            fun_info.append({
-                'name': i,
-                'info': getattr(fun_test, i).__annotations__
-            })
-
+        # fun_list = [x for x in dir(fun_test) if x.startswith('__') and not x.endswith("__")]
+        fun_list = [{"value": x, "label": getattr(fun_test, x).__annotations__.get('return')} for x in dir(fun_test) if
+                    x.startswith('__') and not x.endswith("__")]
         return Response({'code': 200, 'msg': '成功', 'data': fun_list},
                         status=status.HTTP_200_OK)
 
@@ -679,6 +674,7 @@ class FunctionAssistant(MyModelViewSet):
     def fun_info(self, request, *args, **kwargs):
         func = request.query_params.get('func')
         fun_info = getattr(fun_test, func).__annotations__
+        fun_info.popitem()
         info_list = [{"name": key, "type": fun_info[key], "value": ""} for key in fun_info]
         return Response({'code': 200, 'msg': '成功', 'data': info_list},
                         status=status.HTTP_200_OK)
@@ -690,13 +686,13 @@ class FunctionAssistant(MyModelViewSet):
         if not func:
             return Response(status=status.HTTP_404_NOT_FOUND)
         try:
-            # result = eval(f'fun_test.{func}')
-            result, exp = getattr(fun_test, func)(*params)
-            print(result)
-            print(exp)
+            result = eval(f'fun_test.{func}')
+            # result, exp = getattr(fun_test, func)(*params)
+            # print(result)
+            # print(exp)
         except Exception as e:
             raise ParamsException(e.__str__(), 403)
-        return Response({'code': 200, 'msg': '成功', 'data': {"result": result, "exp": exp}},
+        return Response({'code': 200, 'msg': '成功', 'data': result},
                         status=status.HTTP_200_OK)
 
 

@@ -118,7 +118,7 @@ def get_request_data(data, config=None):
     def _replace(match):
         variable = match.group(1)
         if variable.startswith("__"):
-            print(variable)
+            variable = variable.replace("\\", "")
             return str(eval(f'fun_test.{variable}'))
         elif config:
             return str(config.get('variables').get(variable))
@@ -453,4 +453,4 @@ def print_switch(option):
     if option:
         sys.stdout = sys.__stdout__
     else:
-        sys.stdout = open(os.devnull, 'w', encoding='utf-8')
+        sys.stdout = open(os.devnull, 'w')
