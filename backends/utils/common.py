@@ -449,7 +449,7 @@ async def main(obj_list):
 
 # 定义一个开关函数
 def print_switch(option):
-    option = True
+    # option = True
     if option:
         sys.stdout = sys.__stdout__
     else:

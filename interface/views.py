@@ -682,7 +682,7 @@ class FunctionAssistant(MyModelViewSet):
     @action(methods=['post'], detail=False)
     def fun_result(self, request, *args, **kwargs):
         func = request.data.get('func', None)
-        params = request.data.get('params', None)
+        # params = request.data.get('params', None)
         if not func:
             return Response(status=status.HTTP_404_NOT_FOUND)
         try:
