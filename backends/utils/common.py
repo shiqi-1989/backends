@@ -124,7 +124,6 @@ def get_request_data(data, config=None):
             return str(config.get('variables').get(variable))
 
     data_str = orjson.dumps(data).decode()
-    print(data_str)
     new_str = re.sub(r'\${(.*?)}', _replace, data_str)
     new_data = orjson.loads(new_str)
     if config: new_data['url'] = config.get('host') + new_data['url']
@@ -223,7 +222,8 @@ def run_case(case_id, user=None):
     config['variables'] = g_config
     print(config)
     report_name = f"{case_info.title}-{int(time.time() * 1000)}"
-    run(case_info.case_env, config, obj_list, name=report_name, title=case_info.title, description=case_info.info,
+    run(case_info.case_env, config, obj_list, name=report_name, title=case_info.title,
+        description=[case_info.creator, case_info.info],
         tester=user)
     msg_info['report'] = f"http://{MY_HOST}:{MY_PORT}/interface/report/get_detail?title={report_name}"
     Report.objects.create(title=report_name, case=case_info, creator=user)
@@ -453,4 +453,4 @@ def print_switch(option):
     if option:
         sys.stdout = sys.__stdout__
     else:
-        sys.stdout = open(os.devnull, 'w')
+        sys.stdout = open(os.devnull, 'w', encoding='utf-8')

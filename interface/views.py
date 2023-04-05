@@ -682,14 +682,10 @@ class FunctionAssistant(MyModelViewSet):
     @action(methods=['post'], detail=False)
     def fun_result(self, request, *args, **kwargs):
         func = request.data.get('func', None)
-        # params = request.data.get('params', None)
         if not func:
             return Response(status=status.HTTP_404_NOT_FOUND)
         try:
             result = eval(f'fun_test.{func}')
-            # result, exp = getattr(fun_test, func)(*params)
-            # print(result)
-            # print(exp)
         except Exception as e:
             raise ParamsException(e.__str__(), 403)
         return Response({'code': 200, 'msg': '成功', 'data': result},
@@ -698,9 +694,3 @@ class FunctionAssistant(MyModelViewSet):
 
 run_cmd("xmind2testcase webtool 5501")
 scheduler = ApschedulerJob().get_scheduler()
-# print(scheduler.get_jobs())
-# if not scheduler.get_jobs():
-#     print(f"定时任务列表：{scheduler.get_jobs()},关闭服务")
-#     if scheduler.running:
-#         scheduler.shutdown()
-# print(f"定时任务服务：{scheduler.running}")

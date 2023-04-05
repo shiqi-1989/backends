@@ -1,9 +1,10 @@
-dic = {
-    'a': 1,
-    'b': 2
-}
+import platform
+import sys
 
-print(dic)
-a = dic.pop('c')
-print(dic)
-print(a)
+print(platform.version())
+print(platform.platform())
+print(platform.system())
+print(sys.version)
+print(platform.python_version())
+print(platform.python_version_tuple())
+print(platform.python_revision())

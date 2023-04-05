@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import platform
+import sys
 import unittest
 from pathlib import Path
 import requests
@@ -81,12 +83,13 @@ def run(case_env, config, apis_list, verbosity=1, name=None, title=None, descrip
         suite.addTest(ParametrizedTestCase.parametrize(TestInterFace, param=api))
     # 报告存放的文件夹
     report_path = BASE_DIR / f'interface/reports/{name}.html'
-    # report_path = Path(f'interface/reports/{name}.html')
-    # if not report_path.exists():
-    #     report_path.touch()
-    # print(111111)
-    # print(report_path)
+    if not report_path.exists():
+        report_path.parent.mkdir(parents=True, exist_ok=True)
     with open(report_path, 'wb') as f:
-        runner = HTMLTestRunner(stream=f, verbosity=verbosity, title=title, description=description, tester=tester,
-                                language='zh-CN')
-        runner.run(suite, rerun=2, save_last_run=True)
+        runner = HTMLTestRunner(stream=f, verbosity=verbosity, title=title,
+                                description=['类型：API', f'操作系统：{platform.platform()}',
+                                             f'语言环境：Python{platform.python_version()}',
+                                             f'创建人：{description[0]}'],
+                                tester=tester,
+                                language='zh-CN', rerun=2)
+        runner.run(suite)
