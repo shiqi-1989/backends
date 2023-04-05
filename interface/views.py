@@ -692,5 +692,6 @@ class FunctionAssistant(MyModelViewSet):
                         status=status.HTTP_200_OK)
 
 
-run_cmd("xmind2testcase webtool 5501")
+xmind2testcase_start(1)
 scheduler = ApschedulerJob().get_scheduler()
+# run_cmd("xmind2testcase webtool 5501")
