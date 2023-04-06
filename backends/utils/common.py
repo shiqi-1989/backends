@@ -1,11 +1,10 @@
 import asyncio
 import os
+import platform
 import re
 import subprocess
 import sys
-import threading
 import time
-from pathlib import Path
 
 import chardet
 import httpx
@@ -13,7 +12,8 @@ from jsonpath import jsonpath
 from orjson import orjson
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
-from backends.settings import FILES_ROOT, MY_HOST, MY_PORT, BASE_DIR
+
+from backends.settings import FILES_ROOT, MY_HOST, MY_PORT
 from interface.models import Config, Api, Case, Report
 from interface.test_run_case import run
 from . import fun_test
@@ -460,13 +460,16 @@ def xmind2testcase_start(env=1):
     启动xmind2testcase
     :param env: 1-虚拟环境；2-系统环境
     """
-    cmd = r".\venv\Scripts\xmind2testcase webtool 5501" if env == 1 else "xmind2testcase webtool 5501"
+    if platform.system() == "Windows":
+        cmd = r".\venv\Scripts\xmind2testcase webtool 5501" if env == 1 else "xmind2testcase webtool 5501"
+    else:
+        cmd = r"./venv/bin/xmind2testcase webtool 5501" if env == 1 else "xmind2testcase webtool 5501"
     run_cmd(cmd)
 
 
 # 定义一个开关函数
 def print_switch(option):
-    option = True
+    # option = True
     if option:
         sys.stdout = sys.__stdout__
     else:

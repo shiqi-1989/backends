@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 import platform
-import sys
 import unittest
-from pathlib import Path
+
 import requests
 import ujson
 from XTestRunner import HTMLTestRunner
