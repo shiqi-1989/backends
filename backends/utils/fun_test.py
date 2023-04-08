@@ -1,7 +1,10 @@
+import base64
+import hashlib
 import random
 import re
 import string
 import time
+import uuid
 
 
 # 获取随机整数
@@ -36,6 +39,26 @@ def __is_number(number: "String") -> "判断数字":
 # 获取随机手机号
 def __random_mobile() -> "随机手机号":
     return "1" + random.choice("3456789") + ''.join(random.sample(string.digits, k=9))
+
+
+# MD5 加密
+def __md5(string: "String") -> "MD5加密":
+    return hashlib.md5(string.encode('utf-8')).hexdigest()
+
+
+# BASE64加密
+def __base64(string: "String") -> "BASE64加密":
+    return base64.b64encode(string.encode('utf-8')).decode('utf-8')
+
+
+# BASE64解密
+def __base64_decode(string: "String") -> "BASE64解密":
+    return base64.b64decode(string.encode('utf-8')).decode('utf-8')
+
+
+# 获取 UUID
+def __uuid() -> "UUID":
+    return str(uuid.uuid1())
 
 
 if __name__ == '__main__':

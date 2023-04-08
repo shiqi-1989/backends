@@ -13,7 +13,7 @@ from orjson import orjson
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from backends.settings import FILES_ROOT, MY_HOST, MY_PORT
+from backends.settings import FILES_ROOT, MY_HOST, MY_PORT, BASE_DIR
 from interface.models import Config, Api, Case, Report
 from interface.test_run_case import run
 from . import fun_test
@@ -122,13 +122,22 @@ def json_str(dic):
 
 
 def get_request_data(data, config=None):
+    if config:
+        variables = config.get('variables')
+    else:
+        variables = {}
+
     def _replace(match):
-        variable = match.group(1)
-        if variable.startswith("__"):
-            variable = variable.replace("\\", "")
-            return str(eval(f'fun_test.{variable}'))
-        elif config:
-            return str(config.get('variables').get(variable))
+        exp = match.group(1)
+        if exp.startswith("__"):
+            func, variable = get_func_variable(exp)
+            func = func.replace("\\", "")
+            result = eval(f'fun_test.{func}')
+            if variable:
+                variables[variable] = result
+            return str(result)
+        elif variables:
+            return str(variables.get(exp))
 
     data_str = orjson.dumps(data).decode()
     new_str = re.sub(r'\${(.*?)}', _replace, data_str)
@@ -211,10 +220,12 @@ def run_case(case_id, user=None):
         "code": 200
     }
     case_info = Case.objects.get(id=case_id)
-    obj_list = Api.objects.filter(pk__in=case_info.steps).values('title', 'method', 'url', 'bodyType', 'queryData',
+    obj_list = Api.objects.filter(pk__in=case_info.steps).values('id', 'title', 'method', 'url', 'bodyType',
+                                                                 'queryData',
                                                                  'headersData', 'cookies', 'formData',
                                                                  'formUrlencodedData',
                                                                  'rawData', 'postCondition', 'api_env')
+    obj_list = sorted(obj_list, key=lambda x: case_info.steps.index(x['id']))
     if not obj_list:
         msg_info['msg'] = '无可执行的有效步骤！'
         msg_info['code'] = 100
@@ -396,6 +407,10 @@ def my_post_condition(res, postCondition, postConditionResult, variables=None, o
             postConditionResult.append(msg)
 
 
+def get_func_variable(exp):
+    return exp.strip().rsplit(",", 1)
+
+
 # 异步函数
 async def req(client, params, obj_id, postCondition, postConditionResult):
     response, res = None, None
@@ -442,10 +457,11 @@ async def main(obj_list):
     task_list = []  # 任务列表
     async with httpx.AsyncClient() as client:
         for obj in obj_list:
+            temp_variable = {}
             config = None
             if obj.get('api_env'):
                 config = get_config(obj.get('api_env'))
-            params = get_request_data(obj, config)
+            params = get_request_data(obj, config, temp_variable)
             postConditionResult = []
             postCondition = params.pop('postCondition')
             res = req(client, params, obj['id'], postCondition, postConditionResult)
@@ -461,15 +477,15 @@ def xmind2testcase_start(env=1):
     :param env: 1-虚拟环境；2-系统环境
     """
     if platform.system() == "Windows":
-        cmd = r".\venv\Scripts\xmind2testcase webtool 5501" if env == 1 else "xmind2testcase webtool 5501"
+        cmd = f"{BASE_DIR}\\venv\\Scripts\\xmind2testcase webtool 5501" if env == 1 else "xmind2testcase webtool 5501"
     else:
-        cmd = r"./venv/bin/xmind2testcase webtool 5501" if env == 1 else "xmind2testcase webtool 5501"
+        cmd = f"{BASE_DIR}/venv/bin/xmind2testcase webtool 5501" if env == 1 else "xmind2testcase webtool 5501"
     run_cmd(cmd)
 
 
 # 定义一个开关函数
 def print_switch(option):
-    # option = True
+    option = True
     if option:
         sys.stdout = sys.__stdout__
     else:

@@ -4,13 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb2cc3e7-e226-4e2b-8765-73292657c794" name="变更" comment="优化">
-      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1680745258101.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1680748200330.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/backends.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backends.iml" afterDir="false" />
+    <list default="true" id="bb2cc3e7-e226-4e2b-8765-73292657c794" name="变更" comment="优化环境配置">
+      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1680943108532.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1680970635477.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1680971720731.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1680971962288.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1680972178699.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1680972320875.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1680972487417.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1680972626435.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1680974485052.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1680974636663.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1680974834699.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1680975975199.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1680976173101.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backends/utils/HTMLTestRunner_PY3.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backends/utils/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/backends/utils/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backends/utils/fun_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/backends/utils/fun_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/test_run_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/test_run_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
@@ -47,7 +60,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/backends/utils/common.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/xmind2testcase/parser.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/xmind2testcase/utils.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/xmind2testcase/zentao.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/xmindparser/zenreader.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -66,7 +82,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/ProJect/vue3-django/frontends&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/ProJect/ADB_test&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
@@ -85,29 +101,12 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Python.manage">
-    <configuration name="fun_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="backends" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backends/utils" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backends/utils/fun_test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ProJect\vue3-django\backends\interface" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test">
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="backends" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -130,16 +129,16 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="backends" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="D:\Python\Python310\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -159,7 +158,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="D:\Python\Python310\python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -178,15 +177,8 @@
     <list>
       <item itemvalue="Django 服务器.backends" />
       <item itemvalue="Python.manage" />
-      <item itemvalue="Python.fun_test" />
       <item itemvalue="Python.test" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.fun_test" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -221,9 +213,16 @@
       <workItem from="1680411403141" duration="16277000" />
       <workItem from="1680532067475" duration="4865000" />
       <workItem from="1680574136751" duration="10776000" />
-      <workItem from="1680760700661" duration="543000" />
-      <workItem from="1680761627000" duration="2294000" />
-      <workItem from="1680764502283" duration="1343000" />
+      <workItem from="1680622699397" duration="1207000" />
+      <workItem from="1680628055029" duration="134000" />
+      <workItem from="1680628739920" duration="5152000" />
+      <workItem from="1680664205703" duration="5657000" />
+      <workItem from="1680672926189" duration="467000" />
+      <workItem from="1680674260665" duration="20744000" />
+      <workItem from="1680704785100" duration="305000" />
+      <workItem from="1680921970096" duration="1950000" />
+      <workItem from="1680929038671" duration="10798000" />
+      <workItem from="1680961355795" duration="14418000" />
     </task>
     <task id="LOCAL-00001" summary="优化">
       <created>1680592529311</created>
@@ -232,14 +231,25 @@
       <option name="project" value="LOCAL" />
       <updated>1680592529311</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="优化">
+      <created>1680665114450</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680665114450</updated>
+    </task>
+    <task id="LOCAL-00003" summary="优化">
+      <created>1680665136971</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680665136971</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="requirements.txt" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -258,8 +268,8 @@
     <option name="LAST_COMMIT_MESSAGE" value="优化" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/backends$test.coverage" NAME="test 覆盖结果" MODIFIED="1680765059063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backends$fun_test.coverage" NAME="fun_test 覆盖结果" MODIFIED="1680591102419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backends/utils" />
-    <SUITE FILE_PATH="coverage/backends$manage.coverage" NAME="manage 覆盖结果" MODIFIED="1680765436124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backends$manage.coverage" NAME="manage 覆盖结果" MODIFIED="1680967327840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backends$test.coverage" NAME="test 覆盖结果" MODIFIED="1680974218773" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

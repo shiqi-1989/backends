@@ -681,10 +681,11 @@ class FunctionAssistant(MyModelViewSet):
 
     @action(methods=['post'], detail=False)
     def fun_result(self, request, *args, **kwargs):
-        func = request.data.get('func', None)
-        if not func:
+        exp = request.data.get('func', None)
+        if not exp:
             return Response(status=status.HTTP_404_NOT_FOUND)
         try:
+            func, variable = get_func_variable(exp)
             result = eval(f'fun_test.{func}')
         except Exception as e:
             raise ParamsException(e.__str__(), 403)

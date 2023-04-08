@@ -5,7 +5,6 @@ import unittest
 import requests
 import ujson
 from XTestRunner import HTMLTestRunner
-
 from backends.settings import BASE_DIR
 
 gl_config = None
@@ -48,13 +47,13 @@ class TestInterFace(ParametrizedTestCase):
         global gl_config, gl_case_env
         if gl_case_env:
             gl_config['variables'].update(TestInterFace.v)
-            params = get_request_data(self.param, gl_config)
+            # params = get_request_data(self.param, gl_config, TestInterFace.v)
         else:
             config = get_config(self.param.get('api_env'))
             gl_config['host'] = config['host']
             gl_config['variables'].update(config['variables'])
             gl_config['variables'].update(TestInterFace.v)
-            params = get_request_data(self.param, gl_config)
+        params = get_request_data(self.param, gl_config)
         postConditionResult = []
         postCondition = params.pop('postCondition')
         try:
