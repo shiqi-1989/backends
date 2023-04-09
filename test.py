@@ -1,24 +1,21 @@
 import re
+import random
+
 from backends.utils import fun_test
 
-config = {
-    'sho': {'dddd': 123}
-}
-#
-#
-# def get_func_variable(exp):
-#     fun, variable = exp.strip().rsplit(",", 1)
-#     if variable:
-#         print(f"变量名是： {variable}")
-#         config[variable.strip()] = 'shiyanlei'
-#     print(config)
-#
-#
-# aa = None
-# print(config.get('shi', '') + '123')
-# config.get('auth').update({'a': 123})
-# print(config.get('auth'))
-# print(config)
-aa = config.get('sho')
-aa['auth'] = 1111
-print(config)
+
+#  定义函数 获取函数结果
+def get_func_result(exp):
+    func = re.findall(r'(__.*?)\(', exp)[0]
+    print(func)
+    params = re.findall(r'\((.*?)\)', exp)[0].split(',')
+    print(params)
+    return getattr(fun_test, func)(*params)
+
+
+print(random.randint(-12, 12))
+print(int('-7'))
+
+print('-7'.isalnum())
+print('-7'.isdecimal())
+print('-7'.isnumeric())

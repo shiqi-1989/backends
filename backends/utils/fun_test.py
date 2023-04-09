@@ -9,7 +9,10 @@ import uuid
 
 # 获取随机整数
 def __random_int(_min: "Number", _max: "Number") -> "随机整数":
-    return random.randint(_min, _max)
+    if __is_number(_min) and __is_number(_max):
+        return random.randint(int(_min), int(_max))
+    else:
+        return "请输入整数!"
 
 
 # 获取当前秒时间戳
@@ -23,7 +26,7 @@ def __time_stamp(_time: "Time" = None, option: "Select" = None) -> "时间戳":
 
 # 获取随机字符
 def __random_string(length: "Number") -> "随机字符串":
-    return ''.join(random.choices(string.digits + string.ascii_letters, k=length))
+    return ''.join(random.choices(string.digits + string.ascii_letters, k=length)) if length else "请输入字符串长度！"
 
 
 # 验证手机号是否正确
@@ -33,7 +36,7 @@ def __is_mobile(mobile: "String") -> "判断手机号":
 
 # 验证数字
 def __is_number(number: "String") -> "判断数字":
-    return True if re.match(r'^[0-9]*$', number) else False
+    return True if re.match(r'^[-+]?[0-9]*\.?[0-9]+([eE][-+]?[0-9]+)?$', number) else False
 
 
 # 获取随机手机号
@@ -63,3 +66,4 @@ def __uuid() -> "UUID":
 
 if __name__ == '__main__':
     print(__random_mobile.__annotations__)
+    print(__time_stamp('', 's'))

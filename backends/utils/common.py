@@ -128,16 +128,16 @@ def get_request_data(data, config=None):
         variables = {}
 
     def _replace(match):
-        exp = match.group(1)
-        if exp.startswith("__"):
-            func, variable = get_func_variable(exp)
+        content = match.group(1)
+        if content.startswith("__"):
+            func, variable = get_func_variable(content)
             func = func.replace("\\", "")
-            result = eval(f'fun_test.{func}')
+            result = get_func_result(func)
             if variable:
                 variables[variable] = result
             return str(result)
         elif variables:
-            return str(variables.get(exp))
+            return str(variables.get(content))
 
     data_str = orjson.dumps(data).decode()
     new_str = re.sub(r'\${(.*?)}', _replace, data_str)
@@ -409,6 +409,12 @@ def my_post_condition(res, postCondition, postConditionResult, variables=None, o
 
 def get_func_variable(exp):
     return exp.strip().rsplit(",", 1)
+
+
+def get_func_result(exp):
+    func = re.findall(r'(__.*?)\(', exp)[0]
+    params = re.findall(r'\((.*?)\)', exp)[0].split(',')
+    return getattr(fun_test, func)(*params)
 
 
 # 异步函数

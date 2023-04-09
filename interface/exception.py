@@ -21,12 +21,13 @@ def exception_handler(exc, context):
             if isinstance(exc.detail, list):
                 errors = exc.detail
             else:
+                print(exc.detail)
                 # print(exc.detail.items())
                 # print("**************************************")
                 # print(f"exc:{exc.detail}")
                 errors_data = {k: v[0] for k, v in exc.detail.items()}
-                errors = "".join([k + v[0] for k, v in exc.detail.items()])
-                # errors = errors_data['messages']['message']
+                # errors = "".join([k + v[0] for k, v in exc.detail.items()])
+                errors = errors_data['messages']['message']
         else:
             errors = exc.detail
 
