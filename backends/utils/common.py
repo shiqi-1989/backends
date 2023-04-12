@@ -501,17 +501,15 @@ def print_switch(option):
 
 
 # 获取验证码
-def get_msg(env, phone, config):
-    red_items = config.get(env)
-    host_list = red_items['host']
-    red = RedisCluster(startup_nodes=host_list, decode_responses=True)
-    msg = "没有查询到！"
-    key = f"captcha_{phone}"
-    cur_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-    ttl_time = red.ttl(key)
-    if red.exists(key) == 1:
-        text = red.get(key)
-        msg = f"env: {env}, phone: {phone}, Login_code: {text}, {cur_time}, {ttl_time}\n"
-    print(msg)
-    return msg
+def get_msg(env, phone, hosts):
+    with RedisCluster(startup_nodes=hosts, decode_responses=True) as red:
+        msg = "没有查询到！"
+        key = f"captcha_{phone}"
+        cur_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+        ttl_time = red.ttl(key)
+        if red.exists(key) == 1:
+            text = red.get(key)
+            msg = f"{env} | phone: {phone}, 验证码: {text}, {ttl_time}"
+        print(msg)
+        return msg
 # 获取验证码

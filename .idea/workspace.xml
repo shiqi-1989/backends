@@ -5,22 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb2cc3e7-e226-4e2b-8765-73292657c794" name="变更" comment="优化">
-      <change afterPath="$PROJECT_DIR$/backends/utils/test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/migrations/0016_toolsmessage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/migrations/0017_alter_toolsmessage_src.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/migrations/0019_remove_toolsmessage_msg_remove_toolsmessage_phone.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/migrations/0020_alter_toolsmessage_options.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1680839562747.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1680839754075.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1680860710019.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681092649349.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681093800042.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681096431535.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681266600073.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backends/utils/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/backends/utils/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/exception.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/exception.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +32,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -72,6 +70,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
@@ -85,7 +84,7 @@
     &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -234,7 +233,10 @@
       <workItem from="1680761627000" duration="2294000" />
       <workItem from="1680764502283" duration="1343000" />
       <workItem from="1681106192509" duration="98000" />
-      <workItem from="1681265071727" duration="4763000" />
+      <workItem from="1681265071727" duration="8696000" />
+      <workItem from="1681281451869" duration="27000" />
+      <workItem from="1681281976586" duration="1725000" />
+      <workItem from="1681292484108" duration="426000" />
     </task>
     <task id="LOCAL-00001" summary="优化">
       <created>1680592529311</created>
@@ -243,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680592529311</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="优化">
+      <created>1681275612289</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681275612289</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +266,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

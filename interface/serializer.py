@@ -174,3 +174,9 @@ class ToolsMessageModelSerializer(serializers.ModelSerializer):
         model = ToolsMessage
         fields = '__all__'  # 设置全部字段自动生成
         read_only_fields = ['id', 'creator']
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data['phone'] = ""
+        data['msg'] = ""
+        return data

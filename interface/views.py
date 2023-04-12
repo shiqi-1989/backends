@@ -650,27 +650,6 @@ class TagModelViewSet(MyModelViewSet):
                         status=status.HTTP_200_OK)
 
 
-# 工具-Message
-class ToolsMessageModelViewSet(MyModelViewSet):
-    queryset = ToolsMessage.objects.all()
-    serializer_class = ToolsMessageModelSerializer
-    pagination_class = MyPageNum
-    permission_classes = [permissions.IsOwnerOrReadOnly]
-
-
-    def perform_create(self, serializer):
-        serializer.save(creator=self.request.user
-
-    @action(methods=['post'], detail=False)
-    def get_msg(self,request, *args, **kwargs):
-        id = request.data.get('id', None)
-        if not id :
-            return Response(status=status.HTTP_404_NOT_FOUND)
-        env = request.data.get('env', None)
-        print(id)
-        print(env)
-
-
 class Xmind2case(APIView):
     permission_classes = [permissions.IsOwnerOrReadOnly]
 
@@ -716,6 +695,28 @@ class FunctionAssistant(MyModelViewSet):
         except Exception as e:
             raise ParamsException(e.__str__(), 403)
         return Response({'code': 200, 'msg': '成功', 'data': {'result': result, 'exp': exp}},
+                        status=status.HTTP_200_OK)
+
+
+# 工具-Message
+class ToolsMessageModelViewSet(MyModelViewSet):
+    queryset = ToolsMessage.objects.all()
+    serializer_class = ToolsMessageModelSerializer
+    permission_classes = [permissions.IsOwnerOrReadOnly]
+
+    def perform_create(self, serializer):
+        serializer.save(creator=self.request.user)
+
+    # 获取验证码
+    @action(methods=['post'], detail=False)
+    def get_msg(self, request, *args, **kwargs):
+        phone = request.data.get('phone', None)
+        hosts = request.data.get('hosts', None)
+        env = request.data.get('env', None)
+        if not phone or not hosts:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        msg = get_msg(env, phone, hosts)
+        return Response({'code': 200, 'msg': '成功', 'data': {'msg': msg}},
                         status=status.HTTP_200_OK)
 
 

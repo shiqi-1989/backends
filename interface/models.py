@@ -232,15 +232,13 @@ class Tags(models.Model):
 class ToolsMessage(models.Model):
     class Meta:
         # 默认id升序排序
-        ordering = ['-id']
+        ordering = ['id']
         db_table = "toolsMessage"
         verbose_name = "验证码工具"
         verbose_name_plural = verbose_name
 
     name = models.CharField(max_length=50, default='', verbose_name='端名称')
     src = models.TextField(default='', verbose_name='logo')
-    phone = models.CharField(max_length=20, default='', verbose_name='手机号')
-    msg = models.CharField(max_length=10, default='', verbose_name='验证码')
     config = models.JSONField(default=dict, verbose_name="配置")
     creator = models.ForeignKey(User, to_field='username', on_delete=models.DO_NOTHING, verbose_name="创建人")
 
