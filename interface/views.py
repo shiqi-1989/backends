@@ -650,6 +650,27 @@ class TagModelViewSet(MyModelViewSet):
                         status=status.HTTP_200_OK)
 
 
+# 工具-Message
+class ToolsMessageModelViewSet(MyModelViewSet):
+    queryset = ToolsMessage.objects.all()
+    serializer_class = ToolsMessageModelSerializer
+    pagination_class = MyPageNum
+    permission_classes = [permissions.IsOwnerOrReadOnly]
+
+
+    def perform_create(self, serializer):
+        serializer.save(creator=self.request.user
+
+    @action(methods=['post'], detail=False)
+    def get_msg(self,request, *args, **kwargs):
+        id = request.data.get('id', None)
+        if not id :
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        env = request.data.get('env', None)
+        print(id)
+        print(env)
+
+
 class Xmind2case(APIView):
     permission_classes = [permissions.IsOwnerOrReadOnly]
 
@@ -700,4 +721,3 @@ class FunctionAssistant(MyModelViewSet):
 
 xmind2testcase_start(1)
 scheduler = ApschedulerJob().get_scheduler()
-# run_cmd("xmind2testcase webtool 5501")

@@ -5,7 +5,9 @@ import re
 import subprocess
 import sys
 import time
+import datetime
 
+from rediscluster import RedisCluster
 import chardet
 import httpx
 from jsonpath import jsonpath
@@ -496,3 +498,20 @@ def print_switch(option):
         sys.stdout = sys.__stdout__
     else:
         sys.stdout = open(os.devnull, 'w', encoding='utf-8')
+
+
+# 获取验证码
+def get_msg(env, phone, config):
+    red_items = config.get(env)
+    host_list = red_items['host']
+    red = RedisCluster(startup_nodes=host_list, decode_responses=True)
+    msg = "没有查询到！"
+    key = f"captcha_{phone}"
+    cur_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    ttl_time = red.ttl(key)
+    if red.exists(key) == 1:
+        text = red.get(key)
+        msg = f"env: {env}, phone: {phone}, Login_code: {text}, {cur_time}, {ttl_time}\n"
+    print(msg)
+    return msg
+# 获取验证码

@@ -14,6 +14,7 @@ router.register('/crontab', views.CrontabModelViewSet, basename='/crontab')
 router.register('/tag', views.TagModelViewSet, basename='/tag')
 router.register('/upload_file', views.FileModelViewSet, basename='/upload_file')
 router.register('/functionAssistant', views.FunctionAssistant, basename='/functionAssistant')
+router.register('/toolsMessage', views.ToolsMessageModelViewSet, basename='/toolsMessage')
 
 urlpatterns = [
                   # path('', include(router.urls)),

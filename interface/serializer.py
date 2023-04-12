@@ -166,3 +166,11 @@ class TagsModelSerializer(serializers.ModelSerializer):
         model = Tags
         fields = '__all__'  # 设置全部字段自动生成
         read_only_fields = ['id', 'creator']
+
+
+# 工具-Message
+class ToolsMessageModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ToolsMessage
+        fields = '__all__'  # 设置全部字段自动生成
+        read_only_fields = ['id', 'creator']
