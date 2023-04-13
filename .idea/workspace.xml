@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb2cc3e7-e226-4e2b-8765-73292657c794" name="变更" comment="优化">
-      <change afterPath="$PROJECT_DIR$/interface/migrations/0019_remove_toolsmessage_msg_remove_toolsmessage_phone.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/migrations/0020_alter_toolsmessage_options.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1680839562747.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1680839754075.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1680860710019.html" afterDir="false" />
@@ -14,11 +12,6 @@
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681093800042.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681096431535.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681266600073.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backends/utils/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/backends/utils/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,6 +230,7 @@
       <workItem from="1681281451869" duration="27000" />
       <workItem from="1681281976586" duration="1725000" />
       <workItem from="1681292484108" duration="426000" />
+      <workItem from="1681296388342" duration="377000" />
     </task>
     <task id="LOCAL-00001" summary="优化">
       <created>1680592529311</created>
@@ -252,7 +246,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681275612289</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="优化">
+      <created>1681296418391</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681296418391</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
