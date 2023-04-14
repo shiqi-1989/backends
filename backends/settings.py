@@ -182,7 +182,7 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.MultiPartParser',
     ],
     # 异常返回格式控制
-    'EXCEPTION_HANDLER': 'interface.exception.exception_handler',
+    'EXCEPTION_HANDLER': 'interface.exception.custom_exception_handler',
 }
 
 AUTH_USER_MODEL = 'interface.User'
