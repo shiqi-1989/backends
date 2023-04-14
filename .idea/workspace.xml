@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb2cc3e7-e226-4e2b-8765-73292657c794" name="变更" comment="优化环境配置">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2023_4_10__10_43____.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/_2023_4_10__10_43____.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backends/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backends/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/exception.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/exception.py" afterDir="false" />
-    </list>
+    <list default="true" id="bb2cc3e7-e226-4e2b-8765-73292657c794" name="变更" comment="优化环境配置" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -235,7 +230,7 @@
       <workItem from="1680929038671" duration="10798000" />
       <workItem from="1680961355795" duration="14947000" />
       <workItem from="1681008558599" duration="11593000" />
-      <workItem from="1681476542288" duration="6520000" />
+      <workItem from="1681476542288" duration="6640000" />
     </task>
     <task id="LOCAL-00001" summary="优化">
       <created>1680592529311</created>
@@ -272,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680976830883</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="优化环境配置">
+      <created>1681485017627</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681485017627</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
