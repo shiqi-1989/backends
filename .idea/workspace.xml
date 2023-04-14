@@ -5,6 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb2cc3e7-e226-4e2b-8765-73292657c794" name="变更" comment="优化">
+      <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/全局变量测试-1681449723298.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/全局变量测试-1681449731826.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/全局变量测试-1681449830299.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/全局变量测试-1681449908213.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/全局变量测试-1681449916695.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/全局变量测试-1681449947083.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/全局变量测试-1681450152491.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/全局变量测试-1681450215049.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/全局变量测试-1681450295723.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/全局变量测试-1681450392643.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/全局变量测试-1681450463085.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/用例-测试重试次数-1681438364769.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/用例-测试重试次数-1681449723795.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/用例-测试重试次数-1681449732122.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/用例-测试重试次数-1681449830580.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/用例-测试重试次数-1681449908462.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/用例-测试重试次数-1681449916933.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/用例-测试重试次数-1681449947323.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/用例-测试重试次数-1681450152875.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/用例-测试重试次数-1681450215551.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/用例-测试重试次数-1681450295984.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/用例-测试重试次数-1681450392989.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/用例-测试重试次数-1681450463389.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1680839562747.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1680839754075.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1680860710019.html" afterDir="false" />
@@ -12,6 +36,30 @@
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681093800042.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681096431535.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681266600073.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681438368203.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681439195808.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681439400301.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681449727086.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681449735394.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681449834427.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681449911700.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681449920263.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681449950543.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681450156152.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681450218955.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681450299252.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681450396265.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681450466636.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2023_4_6_21_56____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2023_4_6__11_21____.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_4_6,_11_21_取消提交了变更_[变更]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_4_6_21_56_取消提交了变更_[变更]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backends/utils/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/backends/utils/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backends/utils/fun_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/backends/utils/fun_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +134,29 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Python.manage">
+  <component name="RunManager" selected="Python.fun_test">
+    <configuration name="common" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="backends" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backends/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backends/utils/common.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="fun_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="backends" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -179,13 +249,15 @@
     <list>
       <item itemvalue="Django 服务器.backends" />
       <item itemvalue="Python.manage" />
+      <item itemvalue="Python.common" />
       <item itemvalue="Python.fun_test" />
       <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.fun_test" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.common" />
       </list>
     </recent_temporary>
   </component>
@@ -231,6 +303,11 @@
       <workItem from="1681281976586" duration="1725000" />
       <workItem from="1681292484108" duration="426000" />
       <workItem from="1681296388342" duration="377000" />
+      <workItem from="1681349433171" duration="4599000" />
+      <workItem from="1681369800751" duration="1163000" />
+      <workItem from="1681381472980" duration="250000" />
+      <workItem from="1681454252894" duration="683000" />
+      <workItem from="1681458099030" duration="1154000" />
     </task>
     <task id="LOCAL-00001" summary="优化">
       <created>1680592529311</created>
@@ -253,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681296418391</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="优化">
+      <created>1681349443186</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681349443186</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,9 +375,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="优化" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/backends$test.coverage" NAME="test 覆盖结果" MODIFIED="1680838175989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backends$test.coverage" NAME="test 覆盖结果" MODIFIED="1681358892748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backends$test__1_.coverage" NAME="test (1) 覆盖结果" MODIFIED="1680838241322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backends/utils" />
-    <SUITE FILE_PATH="coverage/backends$fun_test.coverage" NAME="fun_test 覆盖结果" MODIFIED="1680591102419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backends/utils" />
-    <SUITE FILE_PATH="coverage/backends$manage.coverage" NAME="manage 覆盖结果" MODIFIED="1681096109662" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backends$common.coverage" NAME="common 覆盖结果" MODIFIED="1681358751847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backends/utils" />
+    <SUITE FILE_PATH="coverage/backends$manage.coverage" NAME="manage 覆盖结果" MODIFIED="1681370376301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backends$fun_test.coverage" NAME="fun_test 覆盖结果" MODIFIED="1681458367326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backends/utils" />
   </component>
 </project>

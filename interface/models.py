@@ -238,7 +238,7 @@ class ToolsMessage(models.Model):
         verbose_name_plural = verbose_name
 
     name = models.CharField(max_length=50, default='', verbose_name='端名称')
-    src = models.TextField(default='', verbose_name='logo')
+    src = models.TextField(blank=True, verbose_name='logo')
     config = models.JSONField(default=dict, verbose_name="配置")
     creator = models.ForeignKey(User, to_field='username', on_delete=models.DO_NOTHING, verbose_name="创建人")
 

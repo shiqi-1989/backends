@@ -1,4 +1,5 @@
 import base64
+import datetime
 import hashlib
 import random
 import re
@@ -24,9 +25,18 @@ def __time_stamp(_time: "Time" = None, option: "Select" = None) -> "时间戳":
         return int(time.time()) if option == 's' else int(time.time() * 1000)
 
 
+def __timestamp_to_str(timestamp_str: "String") -> "时间戳转时间":
+    timestamp = int(timestamp_str) if len(timestamp_str) == 10 else int(timestamp_str) / 1000
+    datetime_obj = datetime.datetime.fromtimestamp(timestamp)
+    return datetime_obj.strftime('%Y-%m-%d %H:%M:%S')
+
+
 # 获取随机字符
 def __random_string(length: "Number") -> "随机字符串":
-    return ''.join(random.choices(string.digits + string.ascii_letters, k=length)) if length else "请输入字符串长度！"
+    if __is_number(length):
+        return ''.join(random.choices(string.digits + string.ascii_letters, k=int(length))) if length else "请输入字符串长度！"
+    else:
+        return "请输入正整数!"
 
 
 # 验证手机号是否正确
@@ -66,4 +76,4 @@ def __uuid() -> "UUID":
 
 if __name__ == '__main__':
     print(__random_mobile.__annotations__)
-    print(__time_stamp('', 's'))
+    print(__timestamp_to_str("1681458301571"))

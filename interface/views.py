@@ -711,11 +711,11 @@ class ToolsMessageModelViewSet(MyModelViewSet):
     @action(methods=['post'], detail=False)
     def get_msg(self, request, *args, **kwargs):
         phone = request.data.get('phone', None)
-        hosts = request.data.get('hosts', None)
+        config = request.data.get('config', None)
         env = request.data.get('env', None)
-        if not phone or not hosts:
+        if not phone or not config:
             return Response(status=status.HTTP_404_NOT_FOUND)
-        msg = get_msg(env, phone, hosts)
+        msg = get_msg(env, phone, config)
         return Response({'code': 200, 'msg': '成功', 'data': {'msg': msg}},
                         status=status.HTTP_200_OK)
 

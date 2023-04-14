@@ -501,8 +501,8 @@ def print_switch(option):
 
 
 # 获取验证码
-def get_msg(env, phone, hosts):
-    with RedisCluster(startup_nodes=hosts, decode_responses=True) as red:
+def get_msg(env, phone, config):
+    with RedisCluster(**config, decode_responses=True) as red:
         msg = "没有查询到！"
         key = f"captcha_{phone}"
         cur_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
@@ -512,4 +512,9 @@ def get_msg(env, phone, hosts):
             msg = f"{env} | phone: {phone}, 验证码: {text}, {ttl_time}"
         print(msg)
         return msg
+
+
 # 获取验证码
+
+if __name__ == '__main__':
+    get_msg('alpha', '13716610001', "")
