@@ -29,11 +29,11 @@ class UserSignupSerializer(serializers.ModelSerializer):
 
     def validate(self, attrs):
         if not re.match(r'^1[3-9]\d{9}$', attrs['mobile']):
-            raise ParamsException(self.error_messages['mobile_error'], 200)
+            raise ParamsException(self.error_messages['mobile_error'], 400)
         if User.objects.filter(mobile=attrs.get('mobile')):
-            raise ParamsException(self.error_messages['mobile_exists'], 200)
+            raise ParamsException(self.error_messages['mobile_exists'], 400)
         if User.objects.filter(username=attrs.get('username')):
-            raise ParamsException(self.error_messages['username_exists'], 200)
+            raise ParamsException(self.error_messages['username_exists'], 400)
 
         attrs['password'] = make_password(attrs['password'])
         return attrs
@@ -63,10 +63,10 @@ class UserSigninSerializer(serializers.Serializer):
         self.user = authenticate(username=attrs.get("mobile"), password=attrs.get('password'))
         if self.user:
             if not self.user.is_active:
-                raise ParamsException(self.error_messages['inactive_account'], 200)
+                raise ParamsException(self.error_messages['inactive_account'], 400)
             return attrs
         else:
-            raise ParamsException(self.error_messages['invalid_credentials'], 200)
+            raise ParamsException(self.error_messages['invalid_credentials'], 400)
 
 
 # 修改密码

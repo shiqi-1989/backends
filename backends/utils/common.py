@@ -137,7 +137,7 @@ def get_request_data(data, config=None):
             result = get_func_result(func)
             if variable:
                 variables[variable] = result
-            return str(result)
+            return result
         elif variables:
             return str(variables.get(content))
 
@@ -512,6 +512,18 @@ def get_msg(env, phone, config):
             msg = f"{env} | phone: {phone}, 验证码: {text}, {ttl_time}"
         print(msg)
         return msg
+
+
+def get_request_info(request):
+    text = ""
+    request = request.__dict__
+    for key in request:
+        if key == 'headers':
+            for item, value in request['headers'].items():
+                text += f"{item}".ljust(20) + f"  {value}\n"
+        else:
+            text += f"{key}".ljust(20) + f"  {request[key]}\n"
+    return text
 
 
 # 获取验证码

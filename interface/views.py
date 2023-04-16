@@ -51,28 +51,28 @@ class MyPageNum(PageNumberPagination):
 class MyModelViewSet(ModelViewSet):
     def update(self, request, *args, **kwargs):
         response = super().update(request, *args, **kwargs)
-        return Response({'code': 200, 'msg': '更新成功', 'data': response.data}, headers=response.headers,
+        return Response({'code': 200, 'detail': '更新成功', 'data': response.data}, headers=response.headers,
                         status=response.status_code)
 
     def create(self, request, *args, **kwargs):
         response = super().create(request, *args, **kwargs)
-        return Response({'code': 200, 'msg': '创建成功', 'data': response.data}, headers=response.headers,
+        return Response({'code': 200, 'detail': '创建成功', 'data': response.data}, headers=response.headers,
                         status=response.status_code)
 
     def retrieve(self, request, *args, **kwargs):
         response = super().retrieve(request, *args, **kwargs)
-        return Response({'code': 200, 'msg': '获取成功', 'data': response.data}, headers=response.headers,
+        return Response({'code': 200, 'detail': '获取成功', 'data': response.data}, headers=response.headers,
                         status=response.status_code)
 
     def list(self, request, *args, **kwargs):
         response = super().list(request, *args, **kwargs)
-        return Response({'code': 200, 'msg': '获取成功', 'data': response.data},
+        return Response({'code': 200, 'detail': '获取成功', 'data': response.data},
                         headers=response.headers,
                         status=response.status_code)
 
     def destroy(self, request, *args, **kwargs):
         response = super().destroy(request, *args, **kwargs)
-        return Response({'code': 200, 'msg': '删除成功', 'data': response.data}, headers=response.headers,
+        return Response({'code': 200, 'detail': '删除成功', 'data': response.data}, headers=response.headers,
                         status=response.status_code)
 
 
@@ -87,7 +87,7 @@ class UserSignupAPIView(CreateAPIView):
         user = serializer.instance
         refresh, token = get_tokens_for_user(user)
         # token, _ = Token.objects.get_or_create(user=user)
-        data = {"code": 200, "msg": "成功",
+        data = {"code": 200, "detail": "成功",
                 "data": {
                     "refresh": refresh,
                     "token": token,
@@ -114,7 +114,7 @@ class UserSigninAPIView(GenericAPIView):
         user = serializer.user
         refresh, token = get_tokens_for_user(user)
         # token, _ = Token.objects.get_or_create(user=user)
-        data = {"code": 200, "msg": "成功",
+        data = {"code": 200, "detail": "成功",
                 "data": {
                     "refresh": refresh,
                     "token": token,
@@ -175,7 +175,7 @@ class ProjectModelViewSet(MyModelViewSet):
             return Response(status=status.HTTP_404_NOT_FOUND)
         pks = ids.split(',')
         Project.objects.filter(pk__in=pks).filter(creator_id=self.request.user).delete()
-        return Response({'code': 200, 'msg': '成功', 'data': []},
+        return Response({'code': 200, 'detail': '成功', 'data': []},
                         status=status.HTTP_200_OK)
 
 
@@ -239,7 +239,7 @@ class ApiModelViewSet(MyModelViewSet):
             "method": api_obj.method,
             "url": api_obj.url
         }
-        return Response({'code': 200, 'msg': '成功', 'data': api_data},
+        return Response({'code': 200, 'detail': '成功', 'data': api_data},
                         status=status.HTTP_200_OK)
 
     @action(methods=['delete'], detail=False)
@@ -249,7 +249,7 @@ class ApiModelViewSet(MyModelViewSet):
             return Response(status=status.HTTP_404_NOT_FOUND)
         pks = ids.split(',')
         Api.objects.filter(pk__in=pks).filter(creator_id=self.request.user).delete()
-        return Response({'code': 200, 'msg': '成功', 'data': []},
+        return Response({'code': 200, 'detail': '成功', 'data': []},
                         status=status.HTTP_200_OK)
 
     #  单接口调试执行
@@ -276,6 +276,7 @@ class ApiModelViewSet(MyModelViewSet):
         postCondition = params.pop('postCondition')
         s = requests.Session()
         res = None
+        req = None
         start_time = int(round(time.time() * 1000))
         try:
             res = s.request(**params, verify=False, timeout=5)
@@ -283,8 +284,10 @@ class ApiModelViewSet(MyModelViewSet):
             # res.raise_for_status()
             my_post_condition(res, postCondition, postConditionResult, config_id=config_id)
             # print(postConditionResult)
+            req = get_request_info(res.request)
             return Response(
-                {'code': 200, 'msg': '成功', "data": res.text, "postConditionResult": postConditionResult,
+                {'code': 200, 'detail': '成功', "data": res.text, "postConditionResult": postConditionResult,
+                 "request": req,
                  "duration": int(res.elapsed.total_seconds() * 1000), "startTime": start_time,
                  "status": res.status_code}, status=status.HTTP_200_OK)
         except Exception as e:
@@ -295,7 +298,8 @@ class ApiModelViewSet(MyModelViewSet):
                 duration = int(round(time.time() * 1000)) - start_time
                 _status = status.HTTP_500_INTERNAL_SERVER_ERROR
             return Response(
-                {'code': 100, 'msg': '失败', "data": e.__str__(), "postConditionResult": postConditionResult,
+                {'code': 100, 'detail': '失败', "data": e.__str__(), "postConditionResult": postConditionResult,
+                 "request": req,
                  "duration": duration, "startTime": start_time, "status": _status},
                 status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         finally:
@@ -373,7 +377,7 @@ class ApiModelViewSet(MyModelViewSet):
                                 files_text = f"• 【请求files】：\n{json_str(params.get('files'))}"
                             pre_text = f"• 【请求url】：\n{params.get('method')} {params.get('url')}\n• 【请求params】：\n{json_str(params.get('params'))}\n• 【请求header】：\n{json_str(params.get('headers'))}\n• 【请求cookies】：\n{json_str(params.get('cookies'))}\n{files_text}\n• 【请求body】：\n{pre_data}\n• 【响应结果】：\nHTTP CODE: {response.get('status')}\n{pre_result}"
 
-        return Response({'code': 200, 'msg': '成功', 'data': {"pre_text": pre_text}}, status=status.HTTP_200_OK)
+        return Response({'code': 200, 'detail': '成功', 'data': {"pre_text": pre_text}}, status=status.HTTP_200_OK)
 
 
 # 用例
@@ -397,7 +401,7 @@ class CaseModelViewSet(MyModelViewSet):
             step = Api.objects.filter(pk__exact=api).values('id', 'title')
             if step:
                 steps.append(step[0])
-        return Response({'code': 200, 'msg': '成功', 'data': steps},
+        return Response({'code': 200, 'detail': '成功', 'data': steps},
                         status=status.HTTP_200_OK)
 
     @action(methods=['delete'], detail=False)
@@ -409,7 +413,7 @@ class CaseModelViewSet(MyModelViewSet):
         case = Case.objects.filter(pk__in=pks).filter(creator_id=self.request.user)
         del_id = list(case.values('id'))
         case.delete()
-        return Response({'code': 200, 'msg': '成功', 'data': del_id},
+        return Response({'code': 200, 'detail': '成功', 'data': del_id},
                         status=status.HTTP_200_OK)
 
     @action(methods=['post'], detail=False)
@@ -421,11 +425,11 @@ class CaseModelViewSet(MyModelViewSet):
                 t = threading.Thread(target=run_case, args=(i, self.request.user))
                 t.start()
                 t.join()
-            return Response({'code': 200, 'msg': '成功', 'data': []},
+            return Response({'code': 200, 'detail': '成功', 'data': []},
                             status=status.HTTP_200_OK)
         else:
             info = run_case(params['caseId'], self.request.user)
-            return Response({'code': info['code'], 'msg': info['msg'], 'data': {"report": info['report']}},
+            return Response({'code': info['code'], 'detail': info['msg'], 'data': {"report": info['report']}},
                             status=status.HTTP_200_OK)
 
 
@@ -463,7 +467,7 @@ class ReportModelViewSet(MyModelViewSet):
         for i in del_id:
             report_path = BASE_DIR / f"interface/reports/{i['title']}.html"
             report_path.unlink()
-        return Response({'code': 200, 'msg': '成功', 'data': del_id},
+        return Response({'code': 200, 'detail': '成功', 'data': del_id},
                         status=status.HTTP_200_OK)
 
 
@@ -491,7 +495,7 @@ class ConfigModelViewSet(MyModelViewSet):
     @action(methods=['get'], detail=False)
     def public_config(self, request, *args, **kwargs):
         data = Config.objects.filter(project_id__exact=None).values()
-        return Response({'code': 200, 'msg': '成功', 'data': data},
+        return Response({'code': 200, 'detail': '成功', 'data': data},
                         status=status.HTTP_200_OK)
 
 
@@ -511,7 +515,7 @@ class CrontabModelViewSet(MyModelViewSet):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
-        info = {'code': 200, 'msg': "成功"}
+        info = {'code': 200, 'detail': "成功"}
         try:
             scheduler.add_job(globals()[data['func']], data['trigger'], **ast.literal_eval(data['trigger_condition']),
                               id=str(serializer.data.get('id')),
@@ -521,7 +525,7 @@ class CrontabModelViewSet(MyModelViewSet):
                 scheduler.start()
         except Exception as e:
             print(e.__str__())
-            info = {'code': 100, 'msg': e.__str__()}
+            info = {'code': 100, 'detail': e.__str__()}
 
         headers = self.get_success_headers(serializer.data)
         return Response({**info, 'data': serializer.data}, headers=headers,
@@ -552,7 +556,7 @@ class CrontabModelViewSet(MyModelViewSet):
             if scheduler.get_job(i['name']):
                 # 如果存在相同的ID任务，先删掉
                 scheduler.remove_job(i['name'])
-        return Response({'code': 200, 'msg': '成功', 'data': del_id},
+        return Response({'code': 200, 'detail': '成功', 'data': del_id},
                         status=status.HTTP_200_OK)
 
     def update(self, request, *args, **kwargs):
@@ -567,7 +571,7 @@ class CrontabModelViewSet(MyModelViewSet):
         serializer.is_valid(raise_exception=True)
         self.perform_update(serializer)
         new_data = serializer.data
-        info = {'code': 200, 'msg': "成功"}
+        info = {'code': 200, 'detail': "成功"}
         job = scheduler.get_job(data['id'])
         try:
             if job:
@@ -590,7 +594,7 @@ class CrontabModelViewSet(MyModelViewSet):
         # self.perform_update(serializer)
         except Exception as e:
             print(e.__str__())
-            info = {'code': 100, 'msg': e.__str__()}
+            info = {'code': 100, 'detail': e.__str__()}
 
         if getattr(instance, '_prefetched_objects_cache', None):
             # If 'prefetch_related' has been applied to a queryset, we need to
@@ -613,7 +617,7 @@ class CrontabModelViewSet(MyModelViewSet):
         if scheduler_job and job_state == 0:
             scheduler_job.pause()
         job.save()
-        return Response({'code': 200, 'msg': "更新成功", 'data': []},
+        return Response({'code': 200, 'detail': "更新成功", 'data': []},
                         status=status.HTTP_200_OK)
 
 
@@ -646,7 +650,7 @@ class TagModelViewSet(MyModelViewSet):
             return self.get_paginated_response(serializer.data)
 
         serializer = self.get_serializer(queryset, many=True)
-        return Response({'code': 200, 'msg': '成功', 'data': serializer.data},
+        return Response({'code': 200, 'detail': '成功', 'data': serializer.data},
                         status=status.HTTP_200_OK)
 
 
@@ -655,7 +659,7 @@ class Xmind2case(APIView):
 
     def get(self, request, *args, **kwargs):
         url = f"http://{MY_HOST}:{5501}/"
-        return Response({'code': 200, 'msg': '成功', 'data': {'url': url}},
+        return Response({'code': 200, 'detail': '成功', 'data': {'url': url}},
                         status=status.HTTP_200_OK)
 
 
@@ -667,7 +671,7 @@ class FunctionAssistant(MyModelViewSet):
         # fun_list = [x for x in dir(fun_test) if x.startswith('__') and not x.endswith("__")]
         fun_list = [{"value": x, "label": getattr(fun_test, x).__annotations__.get('return')} for x in dir(fun_test) if
                     x.startswith('__') and not x.endswith("__")]
-        return Response({'code': 200, 'msg': '成功', 'data': fun_list},
+        return Response({'code': 200, 'detail': '成功', 'data': fun_list},
                         status=status.HTTP_200_OK)
 
     @action(methods=['get'], detail=False)
@@ -677,7 +681,7 @@ class FunctionAssistant(MyModelViewSet):
         print(fun_info)
         fun_info.popitem()
         info_list = [{"name": key, "type": fun_info[key], "value": ""} for key in fun_info]
-        return Response({'code': 200, 'msg': '成功', 'data': info_list},
+        return Response({'code': 200, 'detail': '成功', 'data': info_list},
                         status=status.HTTP_200_OK)
 
     @action(methods=['post'], detail=False)
@@ -691,10 +695,11 @@ class FunctionAssistant(MyModelViewSet):
             return Response(status=status.HTTP_404_NOT_FOUND)
         try:
             exp = "${" + f"{option}({','.join(params)})," + "}"
+            print(exp)
             result = getattr(fun_test, option)(*params)
         except Exception as e:
             raise ParamsException(e.__str__(), 403)
-        return Response({'code': 200, 'msg': '成功', 'data': {'result': result, 'exp': exp}},
+        return Response({'code': 200, 'detail': '成功', 'data': {'result': result, 'exp': exp}},
                         status=status.HTTP_200_OK)
 
 
@@ -716,7 +721,7 @@ class ToolsMessageModelViewSet(MyModelViewSet):
         if not phone or not config:
             return Response(status=status.HTTP_404_NOT_FOUND)
         msg = get_msg(env, phone, config)
-        return Response({'code': 200, 'msg': '成功', 'data': {'msg': msg}},
+        return Response({'code': 200, 'detail': '成功', 'data': {'msg': msg}},
                         status=status.HTTP_200_OK)
 
 
