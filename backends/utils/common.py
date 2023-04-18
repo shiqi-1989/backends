@@ -414,8 +414,13 @@ def get_func_variable(exp):
 
 
 def get_func_result(exp):
+    # print(exp)
     func = re.findall(r'(__.*?)\(', exp)[0]
-    params = re.findall(r'\((.*?)\)', exp)[0].split(',')
+    # print(func)
+    params = re.findall(r'\((.+)\)', exp)
+    # print(params)
+    params = params[0].split(',') if params else params
+    # print(params)
     return getattr(fun_test, func)(*params)
 
 
@@ -529,4 +534,5 @@ def get_request_info(request):
 # 获取验证码
 
 if __name__ == '__main__':
-    get_msg('alpha', '13716610001', "")
+    # get_msg('alpha', '13716610001', "")
+    get_func_result("__random_mobile()")
