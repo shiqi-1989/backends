@@ -199,7 +199,6 @@ class Crontab(models.Model):
 class Files(models.Model):
     name = models.CharField(max_length=100, default='', verbose_name='文件名称')
     file = models.FileField(upload_to='upload_files', verbose_name='文件路径')
-    api = models.ForeignKey(Api, on_delete=models.CASCADE, verbose_name="接口")
 
     class Meta:
         # 默认id升序排序

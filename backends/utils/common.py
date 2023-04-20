@@ -19,6 +19,7 @@ from backends.settings import FILES_ROOT, MY_HOST, MY_PORT, BASE_DIR
 from interface.models import Config, Api, Case, Report
 from interface.test_run_case import run
 from . import fun_test
+from pprint import pprint
 
 
 #  获取simple jwt token
@@ -124,6 +125,7 @@ def json_str(dic):
 
 
 def get_request_data(data, config=None):
+    pprint(data)
     if config:
         variables = config.get('variables')
     else:
@@ -194,10 +196,14 @@ def get_request_data(data, config=None):
                     for file in i['fileList']:
                         name = i['name']
                         file_name = file['response']['data']['name']
+                        file_path = file['response']['data']['file'].rsplit("/", 1)[1]
+                        print('-----------------------')
+                        print(FILES_ROOT / file_path)
+                        print('-----------------------')
                         _type = file['raw']['type']
                         # with open(FILES_ROOT / file_name, 'rb') as f:
                         #     files[name] = (file_name, f.read(), _type)
-                        files[name] = (file_name, open(FILES_ROOT / file_name, 'rb'), _type)
+                        files[name] = (file_name, open(FILES_ROOT / file_path, 'rb'), _type)
                 else:
                     files[i['name']] = (None, i['value'])
         if files:

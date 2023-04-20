@@ -626,9 +626,19 @@ class FileModelViewSet(MyModelViewSet):
     queryset = Files.objects.all()
     serializer_class = FilesModelSerializer
 
+    def perform_create(self, serializer):
+        name = serializer.validated_data['name']
+        file = serializer.validated_data['file']
+        instance = Files.objects.filter(name=name).first()
+        if instance:
+            instance.file.delete()
+            instance.file = file
+            instance.save()
+        else:
+            serializer.save()
+
     def perform_destroy(self, instance):
-        file_path = MEDIA_ROOT / str(instance.file)
-        file_path.unlink()
+        instance.file.delete()
         instance.delete()
 
 
