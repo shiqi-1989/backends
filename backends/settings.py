@@ -109,6 +109,7 @@ DATABASES = {
         'PASSWORD': 'syl123456',
         'HOST': '127.0.0.1',
         'PORT': '3306',
+        'CONN_MAX_AGE': 60 * 5,  # 60s
     }
 }
 # Password validation

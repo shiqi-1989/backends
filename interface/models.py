@@ -42,7 +42,6 @@ class Project(models.Model):
     title = models.CharField(max_length=30, blank=True, null=True, verbose_name="项目名称")
     info = models.CharField(max_length=1000, blank=True, default='', verbose_name="项目信息")
     creator = models.ForeignKey(User, to_field='username', on_delete=models.DO_NOTHING, verbose_name="创建人")
-    env = models.IntegerField(blank=True, null=True, verbose_name="项目环境")
     creat_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
 
@@ -101,10 +100,9 @@ class Api(models.Model):
     formUrlencodedData = models.JSONField(default=list, verbose_name="x-www-form-urlencoded")
     rawData = models.JSONField(default=dict, verbose_name="raw")
     postCondition = models.JSONField(default=list, verbose_name="后置条件")
-    response = models.JSONField(default=dict, verbose_name="response")
     api_env = models.ForeignKey(Config, blank=True, null=True, db_constraint=False, on_delete=models.SET_NULL,
                                 verbose_name="执行环境")
-
+    status = models.CharField(max_length=5, blank=True, verbose_name="执行状态")
     creat_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
     project = models.ForeignKey(Project, null=True, blank=True, on_delete=models.SET_NULL, verbose_name="所属项目")

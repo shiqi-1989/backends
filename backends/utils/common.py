@@ -431,44 +431,47 @@ def get_func_result(exp):
 
 
 # 异步函数
-async def req(client, params, obj_id, postCondition, postConditionResult):
-    response, res = None, None
-    start_time = int(round(time.time() * 1000))
-    try:
-        res = await client.request(**params)
-        # res.raise_for_status()
-        my_post_condition(res, postCondition, postConditionResult)
-        try:
-            res_content = res.json()
-        except:
-            res_content = res.text
-        response = {
-            "data": res_content,
-            "postConditionResult": postConditionResult,
-            "status": res.status_code,
-            "startTime": start_time,
-            "duration": int(res.elapsed.total_seconds() * 1000)
-        }
-    except Exception as e:
-        print(e.__str__())
-        err = "请求异常！"
-        if e.__str__():
-            err = e.__str__()
-        if res:
-            duration = int(res.elapsed.total_seconds() * 1000)
-            _status = res.status_code
-        else:
-            duration = int(time.time() * 1000) - start_time
-            _status = status.HTTP_500_INTERNAL_SERVER_ERROR
-        response = {
-            "data": err,
-            "postConditionResult": postConditionResult,
-            "status": _status,
-            "startTime": start_time,
-            "duration": duration
-        }
-    finally:
-        Api.objects.filter(id=obj_id).update(response=response)
+async def req(client, params, obj_id):
+    # _status, res = None, None
+    # start_time = int(round(time.time() * 1000))
+    res = await client.request(**params)
+    # try:
+    #     res = await client.request(**params)
+    #     my_post_condition(res, postCondition, postConditionResult)
+    #     try:
+    #         res_content = res.json()
+    #     except:
+    #         res_content = res.text
+    #     response = {
+    #         "data": res_content,
+    #         "postConditionResult": postConditionResult,
+    #         "status": res.status_code,
+    #         "startTime": start_time,
+    #         "duration": int(res.elapsed.total_seconds() * 1000)
+    #     }
+    # except Exception as e:
+    #     print(e.__str__())
+    #     err = "请求异常！"
+    #     if e.__str__():
+    #         err = e.__str__()
+    #     if res:
+    #         duration = int(res.elapsed.total_seconds() * 1000)
+    #         _status = res.status_code
+    #     else:
+    #         duration = int(time.time() * 1000) - start_time
+    #         _status = status.HTTP_500_INTERNAL_SERVER_ERROR
+    #     response = {
+    #         "data": err,
+    #         "postConditionResult": postConditionResult,
+    #         "status": _status,
+    #         "startTime": start_time,
+    #         "duration": duration
+    #     }
+    # finally:
+    #     api = Api.objects.filter(id=obj_id)
+    #     api.update(response=response)
+    api = Api.objects.filter(id=obj_id)
+    api.update(status=res.status_code)
 
 
 # 异步调用 异步函数
@@ -476,14 +479,10 @@ async def main(obj_list):
     task_list = []  # 任务列表
     async with httpx.AsyncClient() as client:
         for obj in obj_list:
-            temp_variable = {}
-            config = None
             if obj.get('api_env'):
                 config = get_config(obj.get('api_env'))
-            params = get_request_data(obj, config, temp_variable)
-            postConditionResult = []
-            postCondition = params.pop('postCondition')
-            res = req(client, params, obj['id'], postCondition, postConditionResult)
+            params = get_request_data(obj)
+            res = req(client, params, obj['id'])
             task = asyncio.create_task(res)  # 创建任务
             task_list.append(task)
         await asyncio.wait(task_list)  # 收集任务

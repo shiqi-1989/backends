@@ -91,7 +91,7 @@ class ApiModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Api
         # fields = '__all__'  # 设置全部字段自动生成
-        fields = ['id', 'title', 'method', 'url', 'api_env', 'creator', 'project', 'project_name', 'response']
+        fields = ['id', 'title', 'method', 'url', 'creator', 'project', 'project_name', 'status']
         read_only_fields = ['id', 'creator']
 
 
@@ -102,7 +102,7 @@ class ApiModelDetailSerializer(serializers.ModelSerializer):
         # fields = '__all__'  # 设置全部字段自动生成
         fields = ['id', 'title', 'method', 'url', 'bodyType', 'queryData', 'headersData', 'cookies',
                   'formData',
-                  'formUrlencodedData', 'rawData', 'postCondition', 'response', 'project', 'api_env']
+                  'formUrlencodedData', 'rawData', 'postCondition', 'project', 'api_env', 'status']
         read_only_fields = ['id', 'creator']
 
 

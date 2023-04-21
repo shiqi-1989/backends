@@ -182,7 +182,7 @@ class ProjectModelViewSet(MyModelViewSet):
 # 接口
 class ApiModelViewSet(MyModelViewSet):
     # queryset = Api.objects.filter(~Q(project=None)).select_related('project')
-    queryset = Api.objects.all().select_related('project')
+    queryset = Api.objects.all().select_related('project', 'creator')
     serializer_class = ApiModelSerializer
     action_serializers = {
         'retrieve': ApiModelDetailSerializer,
@@ -212,10 +212,9 @@ class ApiModelViewSet(MyModelViewSet):
             "project": None,
             "creator": self.request.user
         }
-        queryset = self.filter_queryset(Api.objects.filter(**filters))
-
+        queryset = Api.objects.filter(**filters).values('id', 'title', 'method', 'url')
         page = self.paginate_queryset(queryset)
-        if page is not None:
+        if page:
             serializer = self.get_serializer(page, many=True)
             return self.get_paginated_response(serializer.data)
 
@@ -362,7 +361,8 @@ class ApiModelViewSet(MyModelViewSet):
                             "duration": duration
                         }
                     finally:
-                        Api.objects.filter(id=i['id']).update(response=response)
+                        api = Api.objects.filter(id=i['id'])
+                        api.update(status=response['status'])
                         if len(obj_list) == 1:
                             # pre_data = params.get('data')
                             pre_data = files_text = ""
@@ -382,7 +382,7 @@ class ApiModelViewSet(MyModelViewSet):
 
 # 用例
 class CaseModelViewSet(MyModelViewSet):
-    queryset = Case.objects.all().select_related('project')
+    queryset = Case.objects.all().select_related('project', 'creator')
     serializer_class = CaseModelSerializer
     # 需要过滤的查询条件数据
     filterset_fields = ('id', 'title', 'project__id', 'creator__username')
