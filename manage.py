@@ -21,6 +21,7 @@ def main():
 
 
 if __name__ == '__main__':
-    Runserver.default_addr = MY_HOST  # 修改默认地址
+    # Runserver.default_addr = MY_HOST  # 修改默认地址
+    Runserver.default_addr = '0.0.0.0'  # 修改默认地址
     Runserver.default_port = MY_PORT  # 修改默认端口
     main()

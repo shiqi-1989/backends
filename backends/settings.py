@@ -28,7 +28,7 @@ s.close()
 SECRET_KEY = 'django-insecure-2s=i79#@)qi%wur_(ob-j59(trvnwd#=4b!p%@pm5)hirbi3@w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 APPEND_SLASH = False
