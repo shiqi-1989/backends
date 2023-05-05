@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb2cc3e7-e226-4e2b-8765-73292657c794" name="变更" comment="优化环境配置">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2023_4_14_20_35____.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/在进行更新之前于_2023_4_14_20_35_取消提交了变更_[变更]/shelved.patch" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681696418453.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681698600341.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681785000127.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681871400252.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1682044200352.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1682226100758.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backends/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backends/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/apscheduler_job.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/apscheduler_job.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,10 +51,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/backends/utils/common.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/xmind2testcase/parser.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/xmind2testcase/utils.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/xmind2testcase/zentao.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/xmindparser/zenreader.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -66,6 +68,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/ProJect/vue3-django&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -82,7 +85,8 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
-      &quot;sqlserver.localdb&quot;
+      &quot;sqlserver.localdb&quot;,
+      &quot;sqlite&quot;
     ]
   }
 }</component>
@@ -253,6 +257,7 @@
       <workItem from="1682071284358" duration="640000" />
       <workItem from="1682081957264" duration="141000" />
       <workItem from="1682145854295" duration="4284000" />
+      <workItem from="1683193742885" duration="3198000" />
     </task>
     <task id="LOCAL-00001" summary="优化">
       <created>1680592529311</created>
@@ -362,10 +367,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="优化环境配置" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/backends$fun_test.coverage" NAME="fun_test 覆盖结果" MODIFIED="1681621709527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backends/utils" />
-    <SUITE FILE_PATH="coverage/backends$common.coverage" NAME="common 覆盖结果" MODIFIED="1681697437485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backends/utils" />
-    <SUITE FILE_PATH="coverage/backends$manage.coverage" NAME="manage 覆盖结果" MODIFIED="1682147055139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/backends$test.coverage" NAME="test 覆盖结果" MODIFIED="1681618983796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backends$test.coverage" NAME="test 覆盖结果" MODIFIED="1681698821113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backends$test__1_.coverage" NAME="test (1) 覆盖结果" MODIFIED="1680838241322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backends/utils" />
+    <SUITE FILE_PATH="coverage/backends$fun_test.coverage" NAME="fun_test 覆盖结果" MODIFIED="1681458367326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backends/utils" />
+    <SUITE FILE_PATH="coverage/backends$common.coverage" NAME="common 覆盖结果" MODIFIED="1681697437485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backends/utils" />
+    <SUITE FILE_PATH="coverage/backends$manage.coverage" NAME="manage 覆盖结果" MODIFIED="1683196901650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

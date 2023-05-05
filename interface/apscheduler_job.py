@@ -1,13 +1,15 @@
 from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR, EVENT_JOB_REMOVED
 from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
+from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 from apscheduler.schedulers.background import BackgroundScheduler
 
 init_scheduler_options = {
     'jobstores': {
-        'default': {
-            'type': 'sqlalchemy',
-            'url': 'mysql+pymysql://root:syl123456@127.0.0.1:3306/interface?charset=utf8'
-        }
+        'default': SQLAlchemyJobStore(url='sqlite:///db.sqlite3')
+        # 'default': {
+        #     'type': 'sqlalchemy',
+        #     'url': 'mysql+pymysql://root:syl123456@127.0.0.1:3306/interface?charset=utf8'
+        # }
     },
     'executors': {
         'default': ThreadPoolExecutor(20),
