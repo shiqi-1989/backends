@@ -125,7 +125,7 @@ def json_str(dic):
 
 
 def get_request_data(data, config=None):
-    pprint(data)
+    # pprint(data)
     if config:
         variables = config.get('variables')
     else:

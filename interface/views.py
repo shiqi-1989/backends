@@ -12,9 +12,9 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
-
-from backends.settings import BASE_DIR, MEDIA_ROOT
-from backends.utils import fun_test
+#
+# from backends.settings import BASE_DIR, MEDIA_ROOT
+# from backends.utils import fun_test
 from backends.utils import permissions
 from backends.utils.common import *
 from .apscheduler_job import ApschedulerJob

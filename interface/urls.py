@@ -1,8 +1,21 @@
 from django.urls import path, re_path
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenRefreshView
+from backends.utils import permissions
 
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
 from . import views
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="Python API",
+        default_version='v1',
+        description="Welcome to the world of Tweet",
+    ),
+    public=True,
+    permission_classes=(permissions.IsOwnerOrReadOnly,),
+)
 
 router = DefaultRouter(trailing_slash=False)
 router.register('/project', views.ProjectModelViewSet, basename='/project')
@@ -17,6 +30,10 @@ router.register('/functionAssistant', views.FunctionAssistant, basename='/functi
 router.register('/toolsMessage', views.ToolsMessageModelViewSet, basename='/toolsMessage')
 
 urlpatterns = [
+                  re_path(r'^doc(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0),
+                          name='schema-json'),  # 导出
+                  path('/doc', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),  # <-- 美化UI
+                  path('/redoc', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),  # <-- 这里
                   # path('', include(router.urls)),
                   path('/register', views.UserSignupAPIView.as_view()),
                   path('/change_password', views.ChangePasswordAPIView.as_view()),
