@@ -11,6 +11,7 @@ from rediscluster import RedisCluster
 import chardet
 import httpx
 from jsonpath import jsonpath
+from jmespath import search
 from orjson import orjson
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -352,28 +353,28 @@ def my_post_condition(res, postCondition, postConditionResult, variables=None, o
             #  json提取
             if item['resMetaData'] == 1:
                 # print("Json提取")
-                actual = jsonpath(res.json(), expression)
-                if actual:
-                    actual = actual[0]
-                    if item['continueExtract']['is'] == 1:
-                        separator = item['continueExtract']['separator']
-                        index = item['continueExtract']['index']
-                        try:
-                            actual = re.split(f'[{separator}]', actual)[index]
-                        except Exception as e:
-                            print(f"Json提取失败：{e.__str__()}")
-                            # msg["name"] = f"提取变量「{item['name']}」:"
-                            msg["status"] = False
-                            msg["content"] = f"继续提取变量值：{e.__str__()}"
-                            postConditionResult.append(msg)
-                            continue
-                else:
+                # actual = jsonpath(res.json(), expression)
+                actual = search(expression, res.json())
+                if not actual:
                     # msg["name"] = f"提取变量「{item['name']}」:"
                     msg["status"] = False
                     msg["content"] = f"Json提取{actual}"
                     print(f"Json提取失败：{expression}")
                     postConditionResult.append(msg)
                     continue
+                if item['continueExtract']['is'] == 1:
+                    separator = item['continueExtract']['separator']
+                    index = item['continueExtract']['index']
+                    try:
+                        actual = re.split(f'[{separator}]', actual)[index]
+                    except Exception as e:
+                        print(f"Json提取失败：{e.__str__()}")
+                        # msg["name"] = f"提取变量「{item['name']}」:"
+                        msg["status"] = False
+                        msg["content"] = f"继续提取变量值：{e.__str__()}"
+                        postConditionResult.append(msg)
+                        continue
+
                 # print("最终结果")
                 # print(actual)
                 # 断言
