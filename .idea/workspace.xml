@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb2cc3e7-e226-4e2b-8765-73292657c794" name="变更" comment="优化环境配置">
-      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681696418453.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681698600341.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681785000127.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1681871400252.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1682044200352.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1682226100758.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1683513516491.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1683514023391.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1684288347325.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1684288800591.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/reports/登陆-获取权限列表-1684824098180.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backends/utils/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/backends/utils/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/apscheduler_job.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/apscheduler_job.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,7 +259,8 @@
       <workItem from="1683272338807" duration="757000" />
       <workItem from="1683509550239" duration="5617000" />
       <workItem from="1683515365193" duration="265000" />
-      <workItem from="1684232740176" duration="1483000" />
+      <workItem from="1684232740176" duration="1705000" />
+      <workItem from="1684823454275" duration="1281000" />
     </task>
     <task id="LOCAL-00001" summary="优化">
       <created>1680592529311</created>
@@ -361,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683515416965</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="优化环境配置">
+      <created>1684234433208</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1684234433208</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

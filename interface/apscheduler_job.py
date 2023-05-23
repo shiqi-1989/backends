@@ -3,9 +3,12 @@ from apscheduler.executors.pool import ThreadPoolExecutor, ProcessPoolExecutor
 from apscheduler.jobstores.sqlalchemy import SQLAlchemyJobStore
 from apscheduler.schedulers.background import BackgroundScheduler
 
+from backends.settings import BASE_DIR
+
 init_scheduler_options = {
     'jobstores': {
-        'default': SQLAlchemyJobStore(url='sqlite:///db.sqlite3')
+        # 'default': SQLAlchemyJobStore(url=f'sqlite:///{BASE_DIR / "db.sqlite3"}')
+        'default': SQLAlchemyJobStore(url='mysql+pymysql://root:syl123456@127.0.0.1:3306/interface?charset=utf8')
         # 'default': {
         #     'type': 'sqlalchemy',
         #     'url': 'mysql+pymysql://root:syl123456@127.0.0.1:3306/interface?charset=utf8'
