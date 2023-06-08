@@ -354,14 +354,22 @@ def my_post_condition(res, postCondition, postConditionResult, variables=None, o
             if item['resMetaData'] == 1:
                 # print("Json提取")
                 # actual = jsonpath(res.json(), expression)
-                actual = search(expression, res.json())
-                if not actual:
-                    # msg["name"] = f"提取变量「{item['name']}」:"
+
+                try:
+                    actual = search(expression, res.json())
+                except Exception as e:
                     msg["status"] = False
-                    msg["content"] = f"Json提取{actual}"
+                    msg["content"] = "提取表达式错误"
                     print(f"Json提取失败：{expression}")
                     postConditionResult.append(msg)
                     continue
+                # if not actual:
+                #     # msg["name"] = f"提取变量「{item['name']}」:"
+                #     msg["status"] = False
+                #     msg["content"] = f"Json提取{actual}"
+                #     print(f"Json提取失败：{expression}")
+                #     postConditionResult.append(msg)
+                #     continue
                 if item['continueExtract']['is'] == 1:
                     separator = item['continueExtract']['separator']
                     index = item['continueExtract']['index']
