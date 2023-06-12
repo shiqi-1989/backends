@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb2cc3e7-e226-4e2b-8765-73292657c794" name="变更" comment="优化环境配置">
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1682172532173.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/tool_views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backends/utils/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/backends/utils/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backends/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backends/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +265,10 @@
       <workItem from="1686199455690" duration="123000" />
       <workItem from="1686199691587" duration="637000" />
       <workItem from="1686208333012" duration="1060000" />
-      <workItem from="1686209453719" duration="871000" />
+      <workItem from="1686209453719" duration="1322000" />
+      <workItem from="1686229556760" duration="20000" />
+      <workItem from="1686562758476" duration="2194000" />
+      <workItem from="1686570626023" duration="6595000" />
     </task>
     <task id="LOCAL-00001" summary="优化">
       <created>1680592529311</created>
@@ -370,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684234433208</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="优化环境配置">
+      <created>1686210351460</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686210351460</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +408,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/backends$fun_test.coverage" NAME="fun_test 覆盖结果" MODIFIED="1681621709527" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backends/utils" />
     <SUITE FILE_PATH="coverage/backends$common.coverage" NAME="common 覆盖结果" MODIFIED="1681697437485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backends/utils" />
-    <SUITE FILE_PATH="coverage/backends$manage.coverage" NAME="manage 覆盖结果" MODIFIED="1682147055139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/backends$manage.coverage" NAME="manage 覆盖结果" MODIFIED="1686579915145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backends$test.coverage" NAME="test 覆盖结果" MODIFIED="1681618983796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/backends$test__1_.coverage" NAME="test (1) 覆盖结果" MODIFIED="1680838241322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backends/utils" />
   </component>

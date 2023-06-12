@@ -2,20 +2,11 @@ from django.urls import path, re_path
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenRefreshView
 from backends.utils import permissions
-
+from rest_framework import permissions
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from . import views
-
-schema_view = get_schema_view(
-    openapi.Info(
-        title="Python API",
-        default_version='v1',
-        description="Welcome to the world of Tweet",
-    ),
-    public=True,
-    permission_classes=(permissions.IsOwnerOrReadOnly,),
-)
+from . import tool_views
 
 router = DefaultRouter(trailing_slash=False)
 router.register('/project', views.ProjectModelViewSet, basename='/project')
@@ -26,9 +17,17 @@ router.register('/config', views.ConfigModelViewSet, basename='/config')
 router.register('/crontab', views.CrontabModelViewSet, basename='/crontab')
 router.register('/tag', views.TagModelViewSet, basename='/tag')
 router.register('/upload_file', views.FileModelViewSet, basename='/upload_file')
-router.register('/functionAssistant', views.FunctionAssistant, basename='/functionAssistant')
+# router.register('/functionAssistant', views.FunctionAssistant, basename='/functionAssistant')
 router.register('/toolsMessage', views.ToolsMessageModelViewSet, basename='/toolsMessage')
-
+schema_view = get_schema_view(
+    openapi.Info(
+        title="Python API",
+        default_version='v1',
+        description="Welcome to the world of Tweet",
+    ),
+    public=True,
+    permission_classes=[permissions.AllowAny],
+)
 urlpatterns = [
                   re_path(r'^doc(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0),
                           name='schema-json'),  # 导出
@@ -42,7 +41,9 @@ urlpatterns = [
                   # re_path(r'^/reportDetail/(?P<report_name>.*)$', views.get_report),
                   # path('/getAndroidDevices', views.getAndroidDevices),
                   path('/main/', views.main),
-                  path('/xmind2case', views.Xmind2case.as_view()),
-                  # path('/functionAssistant', views.FunctionAssistant.as_view()),
+                  path('/xmind2case', tool_views.xmind2case),
+                  path('/functionAssistant/fun_list', tool_views.fun_list),
+                  path('/functionAssistant/fun_info', tool_views.fun_info),
+                  path('/functionAssistant/fun_result', tool_views.fun_result),
                   # path('/logout', views.LogoutView.as_view())
               ] + router.urls
