@@ -5,6 +5,8 @@ from rest_framework.response import Response
 from backends.settings import MY_HOST
 from backends.utils import fun_test
 from interface.exception import ParamsException
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
 
 
 @api_view(["GET"])
@@ -16,6 +18,17 @@ def fun_list(request):
                     status=status.HTTP_200_OK)
 
 
+# @swagger_auto_schema(
+#     manual_parameters=[
+#         openapi.Parameter('func', openapi.IN_QUERY, description="test manual param", type=openapi.TYPE_STRING,
+#                           required=True)]
+# )
+@swagger_auto_schema(
+    method='GET',
+    manual_parameters=[
+        openapi.Parameter('func', openapi.IN_QUERY, description="test manual param", type=openapi.TYPE_STRING,
+                          required=True)]
+)
 @api_view(["GET"])
 def fun_info(request):
     func = request.query_params.get('func')
@@ -27,8 +40,22 @@ def fun_info(request):
                     status=status.HTTP_200_OK)
 
 
+@swagger_auto_schema(
+    method='POST',
+    request_body=openapi.Schema(
+        type=openapi.TYPE_OBJECT,
+        required=['option', 'params'],
+        properties={
+            'option': openapi.Schema(type=openapi.TYPE_STRING),
+            'params': openapi.Schema(type=openapi.TYPE_ARRAY, items=openapi.Items(type=openapi.TYPE_STRING))
+        },
+    )
+)
 @api_view(["POST"])
 def fun_result(request):
+    """
+    pa
+    """
     print(request.data)
     option = request.data.get('option', None)
     print(option)
