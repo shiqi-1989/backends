@@ -267,6 +267,8 @@ class ApiModelViewSet(MyModelViewSet):
             g_config.update(config['variables'])
             config['variables'] = g_config
         params = get_request_data(data, config)
+        print("shishishi")
+        print(params)
         postConditionResult = []
         postCondition = params.pop('postCondition')
         s = requests.Session()

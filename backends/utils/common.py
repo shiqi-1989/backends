@@ -136,6 +136,8 @@ def get_request_data(data, config=None):
         content = match.group(1)
         if content.startswith("__"):
             func, variable = get_func_variable(content)
+            print("000000000000000000000000000")
+            print(func, variable)
             func = func.replace("\\", "")
             result = get_func_result(func)
             if variable:
@@ -425,17 +427,26 @@ def my_post_condition(res, postCondition, postConditionResult, variables=None, o
 
 
 def get_func_variable(exp):
-    return exp.strip().rsplit(",", 1)
+    """
+    获取函数表达式和将函数结果赋值的自定义局部变量
+    返回一个元组 （表达式，自定义变量）
+    """
+    v = exp.strip().rsplit(")", 1)
+    if v[1].strip().startswith(","):
+        return exp.strip().rsplit(",", 1)
+    else:
+        return [f'{v[0]})', '']
 
 
 def get_func_result(exp):
-    # print(exp)
+    print("-----------------")
+    print(exp)
     func = re.findall(r'(__.*?)\(', exp)[0]
-    # print(func)
+    print(func)
     params = re.findall(r'\((.+)\)', exp)
-    # print(params)
+    print(params)
     params = params[0].split(',') if params else params
-    # print(params)
+    print(params)
     return getattr(fun_test, func)(*params)
 
 

@@ -64,7 +64,7 @@ def fun_result(request):
     if not option:
         return Response(status=status.HTTP_404_NOT_FOUND)
     try:
-        exp = "${" + f"{option}({','.join(params)})," + "}"
+        exp = "${" + f"{option}({','.join(params)})" + "}"
         print(exp)
         result = getattr(fun_test, option)(*params)
     except Exception as e:
