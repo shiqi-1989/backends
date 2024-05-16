@@ -11,13 +11,15 @@ from .models import *
 
 # 注册
 class UserSignupSerializer(serializers.ModelSerializer):
-    mobile = serializers.CharField(default='')
+    Genders = ("Male", "Female")
+    mobile = serializers.CharField()
     username = serializers.CharField(default=mobile)
     password = serializers.CharField(write_only=True, default='')
+    gender = serializers.ChoiceField(choices=Genders)
 
     class Meta:
         model = User
-        fields = ['id', 'mobile', 'password', 'username']
+        fields = ['id', 'mobile', 'password', 'username', 'gender']
 
     default_error_messages = {
         'code_error': '验证码不正确',

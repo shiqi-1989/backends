@@ -89,6 +89,7 @@ class UserSignupAPIView(CreateAPIView):
                     "token": token,
                     "username": user.username,
                     "user_id": user.pk,
+                    "gender": user.gender,
                     "login_time": get_now_time()
                 }}
 
@@ -116,6 +117,7 @@ class UserSigninAPIView(GenericAPIView):
                     "token": token,
                     "username": user.username,
                     "user_id": user.pk,
+                    "gender": user.gender,
                     "login_time": get_now_time()
                 }
                 }
@@ -267,8 +269,6 @@ class ApiModelViewSet(MyModelViewSet):
             g_config.update(config['variables'])
             config['variables'] = g_config
         params = get_request_data(data, config)
-        print("shishishi")
-        print(params)
         postConditionResult = []
         postCondition = params.pop('postCondition')
         s = requests.Session()

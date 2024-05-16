@@ -1,13 +1,22 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from backends.settings import FILES_ROOT
+from enum import Enum
 
 
 # Create your models here.
 
+
 class User(AbstractUser):
+    class Genders(models.TextChoices):
+        Male = 'Male'
+        Female = 'Female'
+
     mobile = models.CharField('手机号', max_length=11, unique=True, help_text='手机号',
                               error_messages={'unique': '此手机号码已注册'})
+    gender = models.CharField('性别', max_length=10, choices=Genders.choices, default=Genders.Male, help_text='性别')
+
+    # 性别 Male and Female
 
     #
     # # 只读属性
