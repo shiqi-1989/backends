@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bb2cc3e7-e226-4e2b-8765-73292657c794" name="变更" comment="优化环境配置">
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1715751880512.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例-1715751922463.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例修改名称-1686647121999.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例修改名称-1686650781502.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例修改名称-1686651897559.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例修改名称-1686652246249.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例修改名称-1686652280804.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例修改名称-1686652313163.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例修改名称-1686709800533.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例修改名称-1686823627290.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例修改名称-1715742203698.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例修改名称-1715829983923.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例修改名称-1715959230550.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interface/reports/新用例修改名称-1716003690172.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,7 +278,7 @@
       <workItem from="1715742131031" duration="13944000" />
       <workItem from="1715783686860" duration="5013000" />
       <workItem from="1715958069080" duration="1273000" />
-      <workItem from="1716003393383" duration="1833000" />
+      <workItem from="1716003393383" duration="3346000" />
     </task>
     <task id="LOCAL-00001" summary="优化">
       <created>1680592529311</created>
@@ -454,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1715831280936</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="优化环境配置">
+      <created>1716013245865</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1716013245865</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

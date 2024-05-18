@@ -224,10 +224,12 @@ class Tags(models.Model):
         verbose_name = "快捷方式列表"
         verbose_name_plural = verbose_name
 
+    choices = [('1', '私有'), ('2', "共有")]
     title = models.CharField(max_length=50, default='', verbose_name='快捷名称')
     link = models.TextField(default='', verbose_name='链接')
     color = models.CharField(max_length=100, default='', verbose_name='背景色')
-    personal = models.CharField(max_length=5, default='2', verbose_name='是否私有-1：私有 2：共有')
+    # personal = models.CharField(max_length=5, default='2', verbose_name='是否私有-1：私有 2：共有')
+    personal = models.CharField(max_length=5, choices=choices, default='2', verbose_name='私有/共有')
     creator = models.ForeignKey(User, to_field='username', on_delete=models.DO_NOTHING, verbose_name="创建人")
 
     def __str__(self):
