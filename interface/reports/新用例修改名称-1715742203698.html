@@ -1,0 +1,3304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title> 新用例修改名称 </title>
+    <meta name="generator" content="XTestRunner 1.5.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://img.itest.info/seldom-main.css">
+    <link rel="stylesheet" href="http://img.itest.info/seldom-utilities.css">
+
+    <style type="text/css" media="screen">
+    body {
+        font-family: verdana, arial, helvetica, sans-serif;
+        font-size: 80%;
+    }
+
+    table {
+        font-size: 100%;
+    }
+
+    .table td {
+        white-space: inherit !important;
+    }
+
+    /* -- heading ---------------------------------------------------------------------- */
+    h1 {
+        font-size: 16pt;
+        color: gray;
+    }
+
+    pre {
+        background-color: #eef2f7;
+        padding-top: 10px;
+        text-align: left;
+        max-height: 600px;
+        overflow: auto;
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: rgba(114,124,245,.25);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #6c757d;
+    }
+
+    .heading {
+        margin-top: 20px;
+        margin-bottom: 1ex;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 23%;
+        float: left;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+        box-shadow: 0px 0px 5px #000;
+    }
+
+    .heading .attribute {
+        margin-top: 1ex;
+        margin-bottom: 0;
+    }
+
+    .heading .description {
+        margin-top: 4ex;
+        margin-bottom: 6ex;
+    }
+
+    /* -- css div popup ------------------------------------------------------------------------ */
+
+    a.popup_link:hover {
+        color: red;
+    }
+
+    .log_window {
+        max-width: 70%;
+        max-height: 70%;
+    }
+
+    /* -- report ------------------------------------------------------------------------ */
+    .show_detail_line {
+        margin-left: 10px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .show_detail_button {
+        margin-top: 3ex;
+        margin-bottom: 1ex;
+        margin-left: 10px;
+        text-align: right;
+        margin-right: 15px;
+    }
+
+    .header_row {
+        font-weight: bold;
+        color: #606060;
+        border-top-width: 10px;
+        border-color: #d6e9c6;
+        font-size: 15px;
+    }
+
+    .total_row {
+        font-weight: bold;
+        background-color: #dee2e6;
+    }
+
+    .passClass {
+        background-color: #ccf5e7;
+    }
+
+    .failClass {
+        background-color: #ffe8cc;
+    }
+
+    .errorClass {
+        background-color: #ffd6e0;
+    }
+
+    .passCase {
+        color: #00CC88;
+        font-weight: bold;
+    }
+
+    .failCase {
+        color: #FF8C00;
+        font-weight: bold;
+    }
+
+    .errorCase {
+        color: #FF3366;
+        font-weight: bold;
+    }
+
+    .hiddenRow {
+        display: none;
+    }
+
+    .caseStatistics {
+        width: 46%
+    }
+
+    .none {
+        color: #009900
+    }
+
+    .testcase {
+        margin-left: 2em;
+    }
+
+    /* -- chars ---------------------------------------------------------------------- */
+    .testChars {
+        width: 900px;
+        margin-left: 0px;
+    }
+
+    .error-color {
+        color: #fff;
+        background-color: #f44455;
+        border-color: #f44455;
+    }
+
+    .pass-color {
+        color: #fff;
+        background-color: #5fc27e;
+        border-color: #5fc27e;
+    }
+
+    .fail-color {
+        color: #fff;
+        background-color: #fcc100;
+        border-color: #fcc100;
+    }
+
+    .skip-color {
+        color: #fff;
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+    /* -- screenshots ---------------------------------------------------------------------- */
+    .img {
+        border-collapse: collapse;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .img-card {
+        height: 600px;
+        width:800px;
+        background-color: #e7eaf0;
+    }
+
+    .img-circle {
+        height: 20px;
+        border-radius: 12px;
+        background-color: red;
+        padding-left: 13px;
+        margin: 0 auto;
+        position: relative;
+        top: -40px;
+        background-color: rgba(1, 150, 0, 0.3);
+    }
+
+    .img-circle font {
+        border: 1px solid white;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        margin-right: 9px;
+        margin-top: 4px;
+        display: block;
+        float: left;
+        background-color: white;
+    }
+
+    .close-shots {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 99;
+    }
+
+    .footer {
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+
+    #headContainer {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .head-list {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    #resultContainer {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+
+</style>
+</head>
+
+<body style="background-color: #f5f9fc;">
+    <script language="javascript" type="text/javascript">
+        function showLog(id) {
+            document.body.style.overflow = 'hidden'
+            document.body.style.height='100%'
+            document.getElementById(id).style.display = 'block'
+        }
+
+        function hideLog(id) {
+            document.body.style.overflow = 'auto';
+            document.getElementById(id).style.display = 'none'
+        }
+
+        function showImg(obj) {
+            document.body.style.overflow = 'hidden'
+            document.body.style.height='100%'
+            var nextObj = obj.nextElementSibling
+            nextObj.style.display = 'block'
+            var index = 0;   //每张图片的下标，
+            var len = nextObj.getElementsByTagName('img').length;
+            var imgCircle = nextObj.getElementsByClassName('img-circle')[0]
+            nextObj.onmouseover = function () {  //当鼠标光标停在图片上，则停止轮播
+                clearInterval(start);
+            }
+            nextObj.onmouseout = function () {  //当鼠标光标停在图片上，则开始轮播
+                start = setInterval(autoPlay, 1000);
+            }
+            for (var i = 0; i < len; i++) {
+                var fontTag = document.createElement('font')
+                imgCircle.appendChild(fontTag)
+            }
+            var fontTagList = nextObj.getElementsByTagName('font');  //得到所有圆圈
+            changeImg(0)
+            var funny = function (i) {
+                fontTagList[i].onmouseover = function () {
+                    index = i
+                    changeImg(i)
+                }
+            }
+            for (var i = 0; i < fontTagList.length; i++) {
+                funny(i);
+            }
+
+            function autoPlay() {
+                if (index > len - 1) {
+                    index = 0;
+                    clearInterval(start); //运行一轮后停止
+                }
+                changeImg(index++);
+            }
+            imgCircle.style.width = 30 * len + "px";
+            // 对应圆圈和图片同步
+            function changeImg(index) {
+                var imgTags = nextObj.getElementsByTagName('img');
+                var fontTags = nextObj.getElementsByTagName('font');
+                for (i=0; i < fontTags.length; i++) {
+                    imgTags[i].style.display = 'none';
+                    fontTags[i].style.backgroundColor = 'white';
+                }
+                imgTags[index].style.display = 'block';
+                if (fontTags.length > 0) {
+                    fontTags[index].style.backgroundColor = 'red';
+                }
+            }
+        }
+
+        function hideImg(obj) {
+            document.body.style.overflow = 'auto';
+            obj.parentElement.parentElement.parentElement.parentElement.parentElement.style.display = "none";
+            obj.parentElement.parentElement.parentElement.getElementsByClassName('img-circle')[0].innerHTML = "";
+        }
+
+        output_list = Array();
+        /* level 
+        - 0:Summary
+        - 1:Failed 
+        - 2:Skip
+        - 3:All 
+        */
+        function showCase(level, channel) {
+            trs = document.getElementsByTagName("tr");
+            for (var i=0; i < trs.length; i++) {
+                tr = trs[i];
+                id = tr.id;
+                if (["ft", "pt", "et", "st"].indexOf(id.substr(0, 2)) != -1) {
+                    if (level == 0 && id.substr(2, 1) == channel) {
+                        tr.className = 'hiddenRow';
+                    }
+                }
+                if (id.substr(0, 3) == 'pt' + channel) {
+                    if (level == 1) {
+                        tr.className = '';
+                    }
+                    else if (level > 4 && id.substr(2, 1) == channel) {
+                        tr.className = '';
+                    }
+                    else {
+                        tr.className = 'hiddenRow';
+                    }
+                }
+                if (id.substr(0, 3) == 'ft' + channel) {
+                    if (level == 2) {
+                        tr.className = '';
+                    }
+                    else if (level > 4 && id.substr(2, 1) == channel) {
+                        tr.className = '';
+                    }
+                    else {
+                        tr.className = 'hiddenRow';
+                    }
+                }
+                if (id.substr(0, 3) == 'et' + channel) {
+                    if (level == 3) {
+                        tr.className = '';
+                    }
+                    else if (level > 4 && id.substr(2, 1) == channel) {
+                        tr.className = '';
+                    }
+                    else {
+                        tr.className = 'hiddenRow';
+                    }
+                }
+                if (id.substr(0, 3) == 'st' + channel) {
+                    if (level == 4) {
+                        tr.className = '';
+                    }
+                    else if (level > 4 && id.substr(2, 1) == channel) {
+                        tr.className = '';
+                    }
+                    else {
+                        tr.className = 'hiddenRow';
+                    }
+                }
+            }
+        }
+        function showClassDetail(cid, count) {
+            var id_list = Array(count);
+            var toHide = 1;
+            for (var i=0; i < count; i++) {
+                tid0 = 't' + cid.substr(1) + '.' + (i + 1);
+                tid = 'f' + tid0;
+                tr = document.getElementById(tid);
+                if (!tr) {
+                    tid = 'p' + tid0;
+                    tr = document.getElementById(tid);
+                }
+                if (!tr) {
+                    tid = 'e' + tid0;
+                    tr = document.getElementById(tid);
+                }
+                if (!tr) {
+                    tid = 's' + tid0;
+                    tr = document.getElementById(tid);
+                }
+                id_list[i] = tid;
+                if (tr.className) {
+                    toHide = 0;
+                }
+            }
+            for (var i = 0; i < count; i++) {
+                tid = id_list[i];
+                if (toHide) {
+                    document.getElementById(tid).className = 'hiddenRow';
+                }
+                else {
+                    document.getElementById(tid).className = '';
+                }
+            }
+        }
+        function showTestDetail(div_id) {
+            var detailsDiv = document.getElementById(div_id)
+            var displayState = detailsDiv.style.display
+
+            if (displayState != 'block') {
+                displayState = 'block'
+                detailsDiv.style.display = 'block'
+            }
+            else {
+                detailsDiv.style.display = 'none'
+            }
+        }
+        function html_escape(s) {
+            s = s.replace(/&/g, '&amp;');
+            s = s.replace(/</g, '&lt;');
+            s = s.replace(/>/g, '&gt;');
+            return s;
+        }
+    </script>
+
+    <nav class="navbar navbar-light position-lg-sticky top-lg-0 d-none d-lg-block overlap-10 flex-none bg-white border-bottom px-0 py-3" id="topbar">
+    <div class="container-fluid">
+        <div class="hstack gap-2">
+            <a href="https://github.com/SeldomQA/XTestRunner">
+                <img src="http://img.itest.info/XTestRunner_logo.jpg" style="height: 2.25rem;">
+            </a>
+        </div>
+        <div class="navbar-user d-none d-sm-block">
+            <div class="hstack gap-3 ms-4">
+                <h3 style="float: right;"> 新用例修改名称 </h3>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div id="headContainer" class="container-fluid mm-active">
+    <div class="row">
+        <div class="col-12 col-lg-5 col-xl-4 d-flex" style="float:left">
+            <div class='card flex-fill'>
+                <div class="card-header">
+                    <div class="d-flex align-items-center">
+                        <h5 class="mb-0">概述</h5>
+                    </div>
+                </div>
+                <div class="card-body py-0 position-relative scrollable-y" style="max-height:300px">
+                    <div class="list-group list-group-flush">
+                        <div class="list-group-item px-0 position-relative hstack flex-wrap head-list">
+                            <div class="flex-1">
+                                <div class="d-flex align-items-center mb-1">测试人员</div>
+                                <div class="d-flex align-items-center">
+                                    <div class="text-sm text-muted line-clamp-1 me-auto">石先生</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item px-0 position-relative hstack flex-wrap head-list">
+                            <div class="flex-1">
+                                <div class="d-flex align-items-center mb-1">开始时间 - 结束时间</div>
+                                <div class="d-flex align-items-center">
+                                    <div class="text-sm text-muted line-clamp-1 me-auto">2024-05-15 11:03:23 - 2024-05-15 11:03:36</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item px-0 position-relative hstack flex-wrap head-list">
+                            <div class="flex-1">
+                                <div class="d-flex align-items-center mb-1">运行时长</div>
+                                <div class="d-flex align-items-center">
+                                    <div class="text-sm text-muted line-clamp-1 me-auto">0:00:12.900</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item px-0 position-relative hstack flex-wrap head-list">
+                            <div class="flex-1">
+                                <div class="d-flex align-items-center mb-1">统计</div>
+                                <div class="d-flex align-items-center">
+                                    <div class="text-sm text-muted line-clamp-1 me-auto">
+                                        <span class="badge badge-pill bg-soft-success text-success me-2">通过:3</span>
+                                        <span class="badge badge-pill bg-soft-warning text-warning me-2">失败:0</span>
+                                        <span class="badge badge-pill bg-soft-danger text-danger me-2">错误:28</span>
+                                        <span class="badge badge-pill bg-soft-secondary text-secondary me-2">跳过:0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item px-0 position-relative hstack flex-wrap" style="padding-top: 5px;">
+                            <div class="flex-1">
+                                <div class="d-flex align-items-center mb-1">描述</div>
+                                <div class="d-flex align-items-center">
+                                    <div class="text-sm text-muted me-auto"><p>类型：API</p><p>操作系统：Windows-10-10.0.22000-SP0</p><p>语言环境：Python3.10.8</p><p>创建人：石先生</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 20%">
+            <div class="card" style="height: 45%;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">通过</span>
+                            <span class="h3 font-bold mb-0">3</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="icon icon-shape bg-success text-white text-lg rounded-circle">P</div>
+                        </div>
+                    </div>
+                    <div class="mt-2 mb-0 text-sm">
+                        <span class="badge badge-pill bg-soft-warning text-success me-2">9.68%</span>
+                        <span class="text-nowrap text-xs text-muted">通过率</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="progress" style="width:70%; margin-top: 5px;">
+                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="83" aria-valuemin="0"
+                                aria-valuemax="100" style="width:9.68%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="height: 45%; top: 10%;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">失败</span>
+                            <span class="h3 font-bold mb-0">0</span></div>
+                        <div class="col-auto">
+                            <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">F</div>
+                        </div>
+                    </div>
+                    <div class="mt-2 mb-0 text-sm">
+                        <span class="badge badge-pill bg-soft-warning text-warning me-2">0.00%</span>
+                        <span class="text-nowrap text-xs text-muted">失败率</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="progress" style="width:70%; margin-top: 5px;">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="83" aria-valuemin="0"
+                                aria-valuemax="100" style="width:0.00%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="width: 20%">
+            <div class="card" style="height: 45%;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">错误</span>
+                            <span class="h3 font-bold mb-0">28</span></div>
+                        <div class="col-auto">
+                            <div class="icon icon-shape bg-danger text-white text-lg rounded-circle">E</div>
+                        </div>
+                    </div>
+                    <div class="mt-2 mb-0 text-sm">
+                        <span class="badge badge-pill bg-soft-danger text-danger me-2">90.32%</span>
+                        <span class="text-nowrap text-xs text-muted">错误率</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="progress" style="width:70%; margin-top: 5px;">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="83" aria-valuemin="0"
+                                aria-valuemax="100" style="width:90.32%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="height: 45%; top: 10%;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">跳过</span>
+                            <span class="h3 font-bold mb-0">0</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="icon icon-shape bg-secondary text-white text-lg rounded-circle">S</div>
+                        </div>
+                    </div>
+                    <div class="mt-2 mb-0 text-sm">
+                        <span class="badge badge-pill bg-soft-secondary text-secondary me-2">0.00%</span>
+                        <span class="text-nowrap text-xs text-muted">跳过率</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="progress" style="width:70%; margin-top: 5px;">
+                            <div class="progress-bar bg-secondary" role="progressbar" aria-valuenow="83" aria-valuemin="0"
+                                aria-valuemax="100" style="width:0.00%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div id="resultContainer" class="card">
+    <div class="card-header border-bottom">
+        <span style="float: left;">
+            <h5 class="mb-0">结果</h5>
+        </span>
+        <span style="float: right;">
+            <a href='javascript:showCase(0, 1)' class="btn btn-dark btn-sm">摘要</a>
+            <a href='javascript:showCase(1, 1)' class="btn btn-success btn-sm">通过</a>
+            <a href='javascript:showCase(2, 1)' class="btn btn-warning btn-sm">失败</a>
+            <a href='javascript:showCase(3, 1)' class="btn btn-danger btn-sm">错误</a>
+            <a href='javascript:showCase(4, 1)' class="btn btn-secondary btn-sm">跳过</a>
+            <a href='javascript:showCase(5, 1)' class="btn btn-info btn-sm">所有</a>
+        </span>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover table-nowrap">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">测试类/测试用例</th>
+                    <th scope="col">描述</th>
+                    <th scope="col">时长</th>
+                    <th scope="col">执行（次）</th>
+                    <th scope="col">通过（次）</th>
+                    <th scope="col">失败（次）</th>
+                    <th scope="col">错误（次）</th>
+                    <th scope="col">查看</th>
+                    <th scope="col">截图</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+<tr class='failClass'>
+    <td>interface.test_run_case.TestInterFace</td>
+    <td></td>
+    <td></td>
+    <td>31</td>
+    <td>3</td>
+    <td>28</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1.1',31)">Detail</a></td>
+    <td>&nbsp;</td>
+</tr>
+
+<tr id='et1.1.1' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤1</div>
+    </td>
+    <td style="color: #495057">
+        <div>AAAAAAA</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.14 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.1')">error</a>
+        <div id='div_et1.1.1' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤1</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.1')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.1: 
+• 【用例】：
+AAAAAAA
+• 【请求url】：
+GET 123213123
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '123213123': No schema supplied. Perhaps you meant http://123213123?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.2' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤2</div>
+    </td>
+    <td style="color: #495057">
+        <div>BBBBBB</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.2')">error</a>
+        <div id='div_et1.1.2' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤2</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.2')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.2: 
+• 【用例】：
+BBBBBB
+• 【请求url】：
+GET 1213123
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '1213123': No schema supplied. Perhaps you meant http://1213123?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.3' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤3</div>
+    </td>
+    <td style="color: #495057">
+        <div>CCCCCC</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.3')">error</a>
+        <div id='div_et1.1.3' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤3</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.3')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.3: 
+• 【用例】：
+CCCCCC
+• 【请求url】：
+GET cccc
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL 'cccc': No schema supplied. Perhaps you meant http://cccc?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.4' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤4</div>
+    </td>
+    <td style="color: #495057">
+        <div>DDDDDD</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.4')">error</a>
+        <div id='div_et1.1.4' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤4</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.4')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.4: 
+• 【用例】：
+DDDDDD
+• 【请求url】：
+GET dddd
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL 'dddd': No schema supplied. Perhaps you meant http://dddd?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.5' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤5</div>
+    </td>
+    <td style="color: #495057">
+        <div>66666</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.5')">error</a>
+        <div id='div_et1.1.5' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤5</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.5')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.5: 
+• 【用例】：
+66666
+• 【请求url】：
+GET 66666
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '66666': No schema supplied. Perhaps you meant http://66666?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.6' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤6</div>
+    </td>
+    <td style="color: #495057">
+        <div>77777</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.6')">error</a>
+        <div id='div_et1.1.6' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤6</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.6')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.6: 
+• 【用例】：
+77777
+• 【请求url】：
+GET 777777
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '777777': No schema supplied. Perhaps you meant http://777777?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.7' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤7</div>
+    </td>
+    <td style="color: #495057">
+        <div>MMMMM</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.7')">error</a>
+        <div id='div_et1.1.7' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤7</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.7')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.7: 
+• 【用例】：
+MMMMM
+• 【请求url】：
+GET 213213213
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '213213213': No schema supplied. Perhaps you meant http://213213213?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.8' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤8</div>
+    </td>
+    <td style="color: #495057">
+        <div>LLLL</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.8')">error</a>
+        <div id='div_et1.1.8' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤8</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.8')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.8: 
+• 【用例】：
+LLLL
+• 【请求url】：
+GET LLLLL
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL 'LLLLL': No schema supplied. Perhaps you meant http://LLLLL?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.9' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤9</div>
+    </td>
+    <td style="color: #495057">
+        <div>新接口</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.9')">error</a>
+        <div id='div_et1.1.9' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤9</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.9')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.9: 
+• 【用例】：
+新接口
+• 【请求url】：
+GET 123213
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '123213': No schema supplied. Perhaps you meant http://123213?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.10' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤10</div>
+    </td>
+    <td style="color: #495057">
+        <div>新接口</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.10')">error</a>
+        <div id='div_et1.1.10' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤10</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.10')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.10: 
+• 【用例】：
+新接口
+• 【请求url】：
+GET 12321312
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '12321312': No schema supplied. Perhaps you meant http://12321312?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.11' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤11</div>
+    </td>
+    <td style="color: #495057">
+        <div>UUUU</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.11')">error</a>
+        <div id='div_et1.1.11' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤11</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.11')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.11: 
+• 【用例】：
+UUUU
+• 【请求url】：
+GET 12321321
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '12321321': No schema supplied. Perhaps you meant http://12321321?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.12' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤12</div>
+    </td>
+    <td style="color: #495057">
+        <div>1231312</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.12')">error</a>
+        <div id='div_et1.1.12' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤12</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.12')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.12: 
+• 【用例】：
+1231312
+• 【请求url】：
+GET 77777
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '77777': No schema supplied. Perhaps you meant http://77777?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.13' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤13</div>
+    </td>
+    <td style="color: #495057">
+        <div>1231312</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.13')">error</a>
+        <div id='div_et1.1.13' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤13</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.13')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.13: 
+• 【用例】：
+1231312
+• 【请求url】：
+GET 123213213
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '123213213': No schema supplied. Perhaps you meant http://123213213?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.14' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤14</div>
+    </td>
+    <td style="color: #495057">
+        <div>qqqqqqq</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.14')">error</a>
+        <div id='div_et1.1.14' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤14</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.14')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.14: 
+• 【用例】：
+qqqqqqq
+• 【请求url】：
+GET qweqwewqe
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL 'qweqwewqe': No schema supplied. Perhaps you meant http://qweqwewqe?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.15' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤15</div>
+    </td>
+    <td style="color: #495057">
+        <div>99999999</div>
+    </td>
+    <td style="color: #495057">
+        <div>3.06 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.15')">error</a>
+        <div id='div_et1.1.15' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤15</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.15')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.15: 
+• 【用例】：
+99999999
+• 【请求url】：
+GET http://192.168.0.106:3000/interface/case/steps
+• 【请求params】：
+{
+  "id": "1"
+}
+• 【请求header】：
+{
+  "Accept": "*/*",
+  "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgyMTcwNDg2LCJpYXQiOjE2ODE1NjU2ODYsImp0aSI6IjNhMjVjYjI5MTk1MjQ0MzY5ZjkxZjQ0YjIwNGFkN2IxIiwidXNlcl9pZCI6MX0.iBYODb4ydyAzdj0hGfC83qLEhyxUcOEPoW4ubYKv7MI",
+  "Connection": "keep-alive",
+  "Cookie": "csrftoken=L2j1ixkhZNKMPUl79QWw7K1BwDmoKF8z",
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62"
+}
+• 【请求cookies】：
+{}
+• 【请求body】：
+{}
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "D:\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (&lt;urllib3.connection.HTTPConnection object at 0x0000019752AA71F0&gt;, 'Connection to 192.168.0.106 timed out. (connect timeout=3)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='192.168.0.106', port=3000): Max retries exceeded with url: /interface/case/steps?id=1 (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000019752AA71F0&gt;, 'Connection to 192.168.0.106 timed out. (connect timeout=3)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='192.168.0.106', port=3000): Max retries exceeded with url: /interface/case/steps?id=1 (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000019752AA71F0&gt;, 'Connection to 192.168.0.106 timed out. (connect timeout=3)'))
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.16' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤16</div>
+    </td>
+    <td style="color: #495057">
+        <div>888888</div>
+    </td>
+    <td style="color: #495057">
+        <div>3.0 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.16')">error</a>
+        <div id='div_et1.1.16' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤16</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.16')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.16: 
+• 【用例】：
+888888
+• 【请求url】：
+GET http://192.168.0.106:3000/interface/case/steps
+• 【请求params】：
+{
+  "id": "1"
+}
+• 【请求header】：
+{
+  "Accept": "*/*",
+  "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgyMTcwNDg2LCJpYXQiOjE2ODE1NjU2ODYsImp0aSI6IjNhMjVjYjI5MTk1MjQ0MzY5ZjkxZjQ0YjIwNGFkN2IxIiwidXNlcl9pZCI6MX0.iBYODb4ydyAzdj0hGfC83qLEhyxUcOEPoW4ubYKv7MI",
+  "Connection": "keep-alive",
+  "Cookie": "csrftoken=L2j1ixkhZNKMPUl79QWw7K1BwDmoKF8z",
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62"
+}
+• 【请求cookies】：
+{}
+• 【请求body】：
+{}
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "D:\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (&lt;urllib3.connection.HTTPConnection object at 0x000001975384B8B0&gt;, 'Connection to 192.168.0.106 timed out. (connect timeout=3)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='192.168.0.106', port=3000): Max retries exceeded with url: /interface/case/steps?id=1 (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000001975384B8B0&gt;, 'Connection to 192.168.0.106 timed out. (connect timeout=3)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='192.168.0.106', port=3000): Max retries exceeded with url: /interface/case/steps?id=1 (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000001975384B8B0&gt;, 'Connection to 192.168.0.106 timed out. (connect timeout=3)'))
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.17' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤17</div>
+    </td>
+    <td style="color: #495057">
+        <div>999999</div>
+    </td>
+    <td style="color: #495057">
+        <div>3.0 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.17')">error</a>
+        <div id='div_et1.1.17' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤17</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.17')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.17: 
+• 【用例】：
+999999
+• 【请求url】：
+GET http://192.168.0.106:3000/interface/case/steps
+• 【请求params】：
+{
+  "id": "1"
+}
+• 【请求header】：
+{
+  "Accept": "*/*",
+  "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgyMTcwNDg2LCJpYXQiOjE2ODE1NjU2ODYsImp0aSI6IjNhMjVjYjI5MTk1MjQ0MzY5ZjkxZjQ0YjIwNGFkN2IxIiwidXNlcl9pZCI6MX0.iBYODb4ydyAzdj0hGfC83qLEhyxUcOEPoW4ubYKv7MI",
+  "Connection": "keep-alive",
+  "Cookie": "csrftoken=L2j1ixkhZNKMPUl79QWw7K1BwDmoKF8z",
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62"
+}
+• 【请求cookies】：
+{}
+• 【请求body】：
+{}
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "D:\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (&lt;urllib3.connection.HTTPConnection object at 0x000001975384BBB0&gt;, 'Connection to 192.168.0.106 timed out. (connect timeout=3)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='192.168.0.106', port=3000): Max retries exceeded with url: /interface/case/steps?id=1 (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000001975384BBB0&gt;, 'Connection to 192.168.0.106 timed out. (connect timeout=3)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='192.168.0.106', port=3000): Max retries exceeded with url: /interface/case/steps?id=1 (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000001975384BBB0&gt;, 'Connection to 192.168.0.106 timed out. (connect timeout=3)'))
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.18' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤18</div>
+    </td>
+    <td style="color: #495057">
+        <div>XXXXXXXX</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.09 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.18')">error</a>
+        <div id='div_et1.1.18' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤18</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.18')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.18: 
+• 【用例】：
+XXXXXXXX
+• 【请求url】：
+GET http://127.0.0.1http://192.168.0.106:3000/interface/api/14
+• 【请求params】：
+{}
+• 【请求header】：
+{
+  "Accept": "*/*",
+  "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgyMTcwNDg2LCJpYXQiOjE2ODE1NjU2ODYsImp0aSI6IjNhMjVjYjI5MTk1MjQ0MzY5ZjkxZjQ0YjIwNGFkN2IxIiwidXNlcl9pZCI6MX0.iBYODb4ydyAzdj0hGfC83qLEhyxUcOEPoW4ubYKv7MI",
+  "Connection": "keep-alive",
+  "Cookie": "csrftoken=L2j1ixkhZNKMPUl79QWw7K1BwDmoKF8z",
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62"
+}
+• 【请求cookies】：
+{}
+• 【请求body】：
+{}
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "D:\Python\Python310\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "D:\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001975384B490&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1http', port=80): Max retries exceeded with url: //192.168.0.106:3000/interface/api/14 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001975384B490&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1http', port=80): Max retries exceeded with url: //192.168.0.106:3000/interface/api/14 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001975384B490&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.19' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤19</div>
+    </td>
+    <td style="color: #495057">
+        <div>新接口</div>
+    </td>
+    <td style="color: #495057">
+        <div>3.01 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.19')">error</a>
+        <div id='div_et1.1.19' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤19</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.19')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.19: 
+• 【用例】：
+新接口
+• 【请求url】：
+GET http://192.168.0.106:3000/interface/api
+• 【请求params】：
+{
+  "id": "",
+  "title": "",
+  "project__id": "",
+  "creator__username": "",
+  "page": "1",
+  "pageSize": "20"
+}
+• 【请求header】：
+{
+  "Accept": "*/*",
+  "Accept-Language": "zh-CN,zh;q=0.9",
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgyMTU0MDA4LCJpYXQiOjE2ODE1NDkyMDgsImp0aSI6IjYwZjRmNzI1ZTM0NDQxZTk5OGJiMGI3ZjJkZjI4MzZlIiwidXNlcl9pZCI6MX0.2DBd4t_zI4M-i--lvZ-u74eLM4U3N5LKyFTFoGIG3ck",
+  "Connection": "keep-alive",
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+}
+• 【请求cookies】：
+{}
+• 【请求body】：
+{}
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "D:\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 164, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (&lt;urllib3.connection.HTTPConnection object at 0x000001975384BC10&gt;, 'Connection to 192.168.0.106 timed out. (connect timeout=3)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='192.168.0.106', port=3000): Max retries exceeded with url: /interface/api?id=&amp;title=&amp;project__id=&amp;creator__username=&amp;page=1&amp;pageSize=20 (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000001975384BC10&gt;, 'Connection to 192.168.0.106 timed out. (connect timeout=3)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 504, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='192.168.0.106', port=3000): Max retries exceeded with url: /interface/api?id=&amp;title=&amp;project__id=&amp;creator__username=&amp;page=1&amp;pageSize=20 (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000001975384BC10&gt;, 'Connection to 192.168.0.106 timed out. (connect timeout=3)'))
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.20' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤20</div>
+    </td>
+    <td style="color: #495057">
+        <div>自定义接口_copy</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.04 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.20')">error</a>
+        <div id='div_et1.1.20' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤20</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.20')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.20: 
+• 【用例】：
+自定义接口_copy
+• 【请求url】：
+POST http://127.0.0.1https://ug.baidu.com/mcp/pc/pcsearch
+• 【请求params】：
+{
+  "aa": "7",
+  "bb": "7"
+}
+• 【请求header】：
+{
+  "Accept": "*/*",
+  "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+  "Connection": "keep-alive",
+  "Content-Type": "application/json",
+  "Cookie": "BIDUPSID=9EB9D4DADB681855B385CC20596BBE49; PSTM=1667632769; BAIDUID=9EB9D4DADB681855E5CC89EA32534804:FG=1; BDORZ=B490B5EBF6F3CD402E515D22BCDA1598; BAIDUID_BFESS=9EB9D4DADB681855E5CC89EA32534804:FG=1; BA_HECTOR=200h2105a1ah840h8h0g0g2e1i2i3081m; ZFY=VIKIdjbJx1xVkqF:BUuZ4UcebTGBIGOHjdfCss7fkfes:C; __bid_n=1871bab2195de36df14207; ab_sr=1.0.1_Yzk5ZmZkMjliYjAxZTMxZDZiMmMwOGE3ZmQxOGVkOTU3MmFlM2FhZTk1Y2Y0MjQ1ZTBlYWQzZWY1ZGJlYzY1MDZjYzIxN2UxMjVjZDI5MjgwNGJhYTZlMTFhNDg2Y2RlZDZmYzIzNzZiOTVmYjM5Yjk2YzI2ZDI0NzI3MzFlZDVhMThlYWYwZjJmYzRlNDhmMTY0MTMwMjRjNTE2M2M1YQ==; FPTOKEN=MG4QjuAwmFvBjFasX9L6qmZoSXTljOFo0R+mqKn3ptDYbqxi73rledK71f/74uRu3onQkiLPZW/ae70m6t0NfPnM3v6v/ofeVEGq5qa6lhqjGTmjr3ugHOHvcUIlBkryBQzRpIGPYDZul52toC73k+y0Hh72sNlp1QOvcXetBrftne4cJj86B5kIrkJWZHUCz1cqIWgUu4TG+c/Kbvnm+rdpTkYIe8LfAMJVYIXcm1McGuw8LHuYCAF7Jmw/Qo5pkrsWtV2xde6j/gDIIdfIyaUxBHicjIqPkd046ddNPnCWTojwCsKKcIIQJ9mG9eN4PTSekg3jT65y3/eE9n3ZG9a3GQJEZuKniG1Vwn5rxpV0mH7joMRw5vLn71dgnGNTDdSLQL+tXrOFN96T9i3cJQ==|S7o1+Us8nmxtb9EbJw2KH81K4Mi2aqZ2oc2CcIAryYg=|10|8442f158506974614a5ee9af16cab49b; RT=\"z=1&amp;dm=baidu.com&amp;si=aed9d57d-1f07-45d5-a430-3dcbd6d41947&amp;ss=lfz4bxen&amp;sl=1&amp;tt=3b3&amp;bcn=https%3A%2F%2Ffclog.baidu.com%2Flog%2Fweirwood%3Ftype%3Dperf&amp;ld=440&amp;ul=525&amp;hd=52y\"; H_PS_PSSID=36547_38106_38470_38349_38439_38468_38289_38379_37927_38382_38356_26350_22157_37881; PSINO=1; delPer=0; BCLID=11784927608408545730; BCLID_BFESS=11784927608408545730; BDSFRCVID=bH0OJeC6272dnBnf2HMTb_hzIlpuPjRTH6aoS8weA0XiAdCv9K7wEG0PSU8g0K4bT4diogKK0mOTHvKF_2uxOjjg8UtVJeC6EG0Ptf8g0f5; BDSFRCVID_BFESS=bH0OJeC6272dnBnf2HMTb_hzIlpuPjRTH6aoS8weA0XiAdCv9K7wEG0PSU8g0K4bT4diogKK0mOTHvKF_2uxOjjg8UtVJeC6EG0Ptf8g0f5; H_BDCLCKID_SF=tJ-joCK-JC83fP36qRbohP-tbmT22-usKe-j2hcH0KLKMIoghx5_b6DnXJOay-vEWCJjLxJ_Lfb1MRjv0T7bbfoQWMrCKUJqfm0fLh5TtUJ6SDnTDM4M-l33bMryKMnitIj9-pnKWhQrh459XP68bTkA5bjZKxtq3mkjbPbDfn02eCKu-n5jHjo0jGuf3f; H_BDCLCKID_SF_BFESS=tJ-joCK-JC83fP36qRbohP-tbmT22-usKe-j2hcH0KLKMIoghx5_b6DnXJOay-vEWCJjLxJ_Lfb1MRjv0T7bbfoQWMrCKUJqfm0fLh5TtUJ6SDnTDM4M-l33bMryKMnitIj9-pnKWhQrh459XP68bTkA5bjZKxtq3mkjbPbDfn02eCKu-n5jHjo0jGuf3f",
+  "Origin": "https://www.baidu.com",
+  "Referer": "https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=1&amp;tn=baidu&amp;wd=github&amp;fenlei=256&amp;oq=github&amp;rsv_pq=91a1b8f90011253e&amp;rsv_t=c8878CRsKmmUx35T692eICenE3x8YydKYE8yecVYyg8Ty%2B5bdoaGTs7Ma6k&amp;rqlang=cn&amp;rsv_enter=0&amp;rsv_dl=tb&amp;rsv_btype=t&amp;rsv_sug=2",
+  "Sec-Fetch-Dest": "empty",
+  "Sec-Fetch-Mode": "cors",
+  "Sec-Fetch-Site": "same-site",
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62",
+  "sec-ch-ua": "\"Microsoft Edge\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\""
+}
+• 【请求cookies】：
+{}
+• 【请求body】：
+{
+  "invoke_info": {
+    "pos_1": [
+      {}
+    ],
+    "pos_2": [
+      {}
+    ],
+    "pos_3": [
+      {}
+    ]
+  }
+}
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "D:\Python\Python310\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "D:\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000019752A30D30&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1https', port=80): Max retries exceeded with url: //ug.baidu.com/mcp/pc/pcsearch?aa=7&amp;bb=7 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000019752A30D30&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1https', port=80): Max retries exceeded with url: //ug.baidu.com/mcp/pc/pcsearch?aa=7&amp;bb=7 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000019752A30D30&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.21' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤21</div>
+    </td>
+    <td style="color: #495057">
+        <div>12321321321321</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.21')">error</a>
+        <div id='div_et1.1.21' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤21</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.21')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.21: 
+• 【用例】：
+12321321321321
+• 【请求url】：
+GET http://127.0.0.112312321
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "D:\Python\Python310\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "D:\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x0000019752A30B50&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.112312321', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000019752A30B50&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.112312321', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x0000019752A30B50&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.22' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤22</div>
+    </td>
+    <td style="color: #495057">
+        <div>新接口</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.22')">error</a>
+        <div id='div_et1.1.22' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤22</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.22')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.22: 
+• 【用例】：
+新接口
+• 【请求url】：
+GET 12321321321
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '12321321321': No schema supplied. Perhaps you meant http://12321321321?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.23' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤23</div>
+    </td>
+    <td style="color: #495057">
+        <div>新接口</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.23')">error</a>
+        <div id='div_et1.1.23' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤23</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.23')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.23: 
+• 【用例】：
+新接口
+• 【请求url】：
+GET RRRRRRRRRRRRRRRRRRR
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL 'RRRRRRRRRRRRRRRRRRR': No schema supplied. Perhaps you meant http://RRRRRRRRRRRRRRRRRRR?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.24' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_步骤24</div>
+    </td>
+    <td style="color: #495057">
+        <div>自定义接口_copy_copy</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.33 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.24')">pass</a>
+        <div id='div_pt1.1.24' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤24</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.24')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.24: 
+• 【用例】：
+自定义接口_copy_copy
+• 【请求url】：
+POST https://ug.baidu.com/mcp/pc/pcsearch
+• 【请求params】：
+{
+  "aa": "7"
+}
+• 【请求header】：
+{
+  "Accept": "*/*",
+  "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+  "Connection": "keep-alive",
+  "Content-Type": "application/json",
+  "Cookie": "BIDUPSID=9EB9D4DADB681855B385CC20596BBE49; PSTM=1667632769; BAIDUID=9EB9D4DADB681855E5CC89EA32534804:FG=1; BDORZ=B490B5EBF6F3CD402E515D22BCDA1598; BAIDUID_BFESS=9EB9D4DADB681855E5CC89EA32534804:FG=1; BA_HECTOR=200h2105a1ah840h8h0g0g2e1i2i3081m; ZFY=VIKIdjbJx1xVkqF:BUuZ4UcebTGBIGOHjdfCss7fkfes:C; __bid_n=1871bab2195de36df14207; ab_sr=1.0.1_Yzk5ZmZkMjliYjAxZTMxZDZiMmMwOGE3ZmQxOGVkOTU3MmFlM2FhZTk1Y2Y0MjQ1ZTBlYWQzZWY1ZGJlYzY1MDZjYzIxN2UxMjVjZDI5MjgwNGJhYTZlMTFhNDg2Y2RlZDZmYzIzNzZiOTVmYjM5Yjk2YzI2ZDI0NzI3MzFlZDVhMThlYWYwZjJmYzRlNDhmMTY0MTMwMjRjNTE2M2M1YQ==; FPTOKEN=MG4QjuAwmFvBjFasX9L6qmZoSXTljOFo0R+mqKn3ptDYbqxi73rledK71f/74uRu3onQkiLPZW/ae70m6t0NfPnM3v6v/ofeVEGq5qa6lhqjGTmjr3ugHOHvcUIlBkryBQzRpIGPYDZul52toC73k+y0Hh72sNlp1QOvcXetBrftne4cJj86B5kIrkJWZHUCz1cqIWgUu4TG+c/Kbvnm+rdpTkYIe8LfAMJVYIXcm1McGuw8LHuYCAF7Jmw/Qo5pkrsWtV2xde6j/gDIIdfIyaUxBHicjIqPkd046ddNPnCWTojwCsKKcIIQJ9mG9eN4PTSekg3jT65y3/eE9n3ZG9a3GQJEZuKniG1Vwn5rxpV0mH7joMRw5vLn71dgnGNTDdSLQL+tXrOFN96T9i3cJQ==|S7o1+Us8nmxtb9EbJw2KH81K4Mi2aqZ2oc2CcIAryYg=|10|8442f158506974614a5ee9af16cab49b; RT=\"z=1&amp;dm=baidu.com&amp;si=aed9d57d-1f07-45d5-a430-3dcbd6d41947&amp;ss=lfz4bxen&amp;sl=1&amp;tt=3b3&amp;bcn=https%3A%2F%2Ffclog.baidu.com%2Flog%2Fweirwood%3Ftype%3Dperf&amp;ld=440&amp;ul=525&amp;hd=52y\"; H_PS_PSSID=36547_38106_38470_38349_38439_38468_38289_38379_37927_38382_38356_26350_22157_37881; PSINO=1; delPer=0; BCLID=11784927608408545730; BCLID_BFESS=11784927608408545730; BDSFRCVID=bH0OJeC6272dnBnf2HMTb_hzIlpuPjRTH6aoS8weA0XiAdCv9K7wEG0PSU8g0K4bT4diogKK0mOTHvKF_2uxOjjg8UtVJeC6EG0Ptf8g0f5; BDSFRCVID_BFESS=bH0OJeC6272dnBnf2HMTb_hzIlpuPjRTH6aoS8weA0XiAdCv9K7wEG0PSU8g0K4bT4diogKK0mOTHvKF_2uxOjjg8UtVJeC6EG0Ptf8g0f5; H_BDCLCKID_SF=tJ-joCK-JC83fP36qRbohP-tbmT22-usKe-j2hcH0KLKMIoghx5_b6DnXJOay-vEWCJjLxJ_Lfb1MRjv0T7bbfoQWMrCKUJqfm0fLh5TtUJ6SDnTDM4M-l33bMryKMnitIj9-pnKWhQrh459XP68bTkA5bjZKxtq3mkjbPbDfn02eCKu-n5jHjo0jGuf3f; H_BDCLCKID_SF_BFESS=tJ-joCK-JC83fP36qRbohP-tbmT22-usKe-j2hcH0KLKMIoghx5_b6DnXJOay-vEWCJjLxJ_Lfb1MRjv0T7bbfoQWMrCKUJqfm0fLh5TtUJ6SDnTDM4M-l33bMryKMnitIj9-pnKWhQrh459XP68bTkA5bjZKxtq3mkjbPbDfn02eCKu-n5jHjo0jGuf3f",
+  "Origin": "https://www.baidu.com",
+  "Referer": "https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=1&amp;tn=baidu&amp;wd=github&amp;fenlei=256&amp;oq=github&amp;rsv_pq=91a1b8f90011253e&amp;rsv_t=c8878CRsKmmUx35T692eICenE3x8YydKYE8yecVYyg8Ty%2B5bdoaGTs7Ma6k&amp;rqlang=cn&amp;rsv_enter=0&amp;rsv_dl=tb&amp;rsv_btype=t&amp;rsv_sug=2",
+  "Sec-Fetch-Dest": "empty",
+  "Sec-Fetch-Mode": "cors",
+  "Sec-Fetch-Site": "same-site",
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62",
+  "sec-ch-ua": "\"Microsoft Edge\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\""
+}
+• 【请求cookies】：
+{}
+• 【请求body】：
+{
+  "invoke_info": {
+    "pos_1": [
+      {}
+    ],
+    "pos_2": [
+      {}
+    ],
+    "pos_3": [
+      {}
+    ]
+  }
+}
+• 【响应结果】：
+HTTP CODE: 200
+{
+  "data": {
+    "action_rule": {
+      "pos_1": [],
+      "pos_2": [],
+      "pos_3": []
+    },
+    "log_id": "40353154"
+  },
+  "errmsg": "ok",
+  "errno": 0
+}
+****************************后置操作****************************
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.25' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤25</div>
+    </td>
+    <td style="color: #495057">
+        <div>新接口</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.25')">error</a>
+        <div id='div_et1.1.25' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤25</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.25')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.25: 
+• 【用例】：
+新接口
+• 【请求url】：
+GET 12321321312
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '12321321312': No schema supplied. Perhaps you meant http://12321321312?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.26' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤26</div>
+    </td>
+    <td style="color: #495057">
+        <div>新接口</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.26')">error</a>
+        <div id='div_et1.1.26' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤26</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.26')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.26: 
+• 【用例】：
+新接口
+• 【请求url】：
+GET 12321312
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '12321312': No schema supplied. Perhaps you meant http://12321312?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.27' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_步骤27</div>
+    </td>
+    <td style="color: #495057">
+        <div>自定义接口_copy</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.01 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.27')">pass</a>
+        <div id='div_pt1.1.27' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤27</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.27')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.27: 
+• 【用例】：
+自定义接口_copy
+• 【请求url】：
+POST https://ug.baidu.com/mcp/pc/pcsearch
+• 【请求params】：
+{
+  "aa": "7"
+}
+• 【请求header】：
+{
+  "Accept": "*/*",
+  "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+  "Connection": "keep-alive",
+  "Content-Type": "application/json",
+  "Cookie": "BIDUPSID=9EB9D4DADB681855B385CC20596BBE49; PSTM=1667632769; BAIDUID=9EB9D4DADB681855E5CC89EA32534804:FG=1; BDORZ=B490B5EBF6F3CD402E515D22BCDA1598; BAIDUID_BFESS=9EB9D4DADB681855E5CC89EA32534804:FG=1; BA_HECTOR=200h2105a1ah840h8h0g0g2e1i2i3081m; ZFY=VIKIdjbJx1xVkqF:BUuZ4UcebTGBIGOHjdfCss7fkfes:C; __bid_n=1871bab2195de36df14207; ab_sr=1.0.1_Yzk5ZmZkMjliYjAxZTMxZDZiMmMwOGE3ZmQxOGVkOTU3MmFlM2FhZTk1Y2Y0MjQ1ZTBlYWQzZWY1ZGJlYzY1MDZjYzIxN2UxMjVjZDI5MjgwNGJhYTZlMTFhNDg2Y2RlZDZmYzIzNzZiOTVmYjM5Yjk2YzI2ZDI0NzI3MzFlZDVhMThlYWYwZjJmYzRlNDhmMTY0MTMwMjRjNTE2M2M1YQ==; FPTOKEN=MG4QjuAwmFvBjFasX9L6qmZoSXTljOFo0R+mqKn3ptDYbqxi73rledK71f/74uRu3onQkiLPZW/ae70m6t0NfPnM3v6v/ofeVEGq5qa6lhqjGTmjr3ugHOHvcUIlBkryBQzRpIGPYDZul52toC73k+y0Hh72sNlp1QOvcXetBrftne4cJj86B5kIrkJWZHUCz1cqIWgUu4TG+c/Kbvnm+rdpTkYIe8LfAMJVYIXcm1McGuw8LHuYCAF7Jmw/Qo5pkrsWtV2xde6j/gDIIdfIyaUxBHicjIqPkd046ddNPnCWTojwCsKKcIIQJ9mG9eN4PTSekg3jT65y3/eE9n3ZG9a3GQJEZuKniG1Vwn5rxpV0mH7joMRw5vLn71dgnGNTDdSLQL+tXrOFN96T9i3cJQ==|S7o1+Us8nmxtb9EbJw2KH81K4Mi2aqZ2oc2CcIAryYg=|10|8442f158506974614a5ee9af16cab49b; RT=\"z=1&amp;dm=baidu.com&amp;si=aed9d57d-1f07-45d5-a430-3dcbd6d41947&amp;ss=lfz4bxen&amp;sl=1&amp;tt=3b3&amp;bcn=https%3A%2F%2Ffclog.baidu.com%2Flog%2Fweirwood%3Ftype%3Dperf&amp;ld=440&amp;ul=525&amp;hd=52y\"; H_PS_PSSID=36547_38106_38470_38349_38439_38468_38289_38379_37927_38382_38356_26350_22157_37881; PSINO=1; delPer=0; BCLID=11784927608408545730; BCLID_BFESS=11784927608408545730; BDSFRCVID=bH0OJeC6272dnBnf2HMTb_hzIlpuPjRTH6aoS8weA0XiAdCv9K7wEG0PSU8g0K4bT4diogKK0mOTHvKF_2uxOjjg8UtVJeC6EG0Ptf8g0f5; BDSFRCVID_BFESS=bH0OJeC6272dnBnf2HMTb_hzIlpuPjRTH6aoS8weA0XiAdCv9K7wEG0PSU8g0K4bT4diogKK0mOTHvKF_2uxOjjg8UtVJeC6EG0Ptf8g0f5; H_BDCLCKID_SF=tJ-joCK-JC83fP36qRbohP-tbmT22-usKe-j2hcH0KLKMIoghx5_b6DnXJOay-vEWCJjLxJ_Lfb1MRjv0T7bbfoQWMrCKUJqfm0fLh5TtUJ6SDnTDM4M-l33bMryKMnitIj9-pnKWhQrh459XP68bTkA5bjZKxtq3mkjbPbDfn02eCKu-n5jHjo0jGuf3f; H_BDCLCKID_SF_BFESS=tJ-joCK-JC83fP36qRbohP-tbmT22-usKe-j2hcH0KLKMIoghx5_b6DnXJOay-vEWCJjLxJ_Lfb1MRjv0T7bbfoQWMrCKUJqfm0fLh5TtUJ6SDnTDM4M-l33bMryKMnitIj9-pnKWhQrh459XP68bTkA5bjZKxtq3mkjbPbDfn02eCKu-n5jHjo0jGuf3f",
+  "Origin": "https://www.baidu.com",
+  "Referer": "https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=1&amp;tn=baidu&amp;wd=github&amp;fenlei=256&amp;oq=github&amp;rsv_pq=91a1b8f90011253e&amp;rsv_t=c8878CRsKmmUx35T692eICenE3x8YydKYE8yecVYyg8Ty%2B5bdoaGTs7Ma6k&amp;rqlang=cn&amp;rsv_enter=0&amp;rsv_dl=tb&amp;rsv_btype=t&amp;rsv_sug=2",
+  "Sec-Fetch-Dest": "empty",
+  "Sec-Fetch-Mode": "cors",
+  "Sec-Fetch-Site": "same-site",
+  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.62",
+  "sec-ch-ua": "\"Microsoft Edge\";v=\"111\", \"Not(A:Brand\";v=\"8\", \"Chromium\";v=\"111\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\""
+}
+• 【请求cookies】：
+{}
+• 【请求body】：
+{
+  "invoke_info": {
+    "pos_1": [
+      {}
+    ],
+    "pos_2": [
+      {}
+    ],
+    "pos_3": [
+      {}
+    ]
+  }
+}
+• 【响应结果】：
+HTTP CODE: 200
+{
+  "data": {
+    "action_rule": {
+      "pos_1": [],
+      "pos_2": [],
+      "pos_3": []
+    },
+    "log_id": "1926557517"
+  },
+  "errmsg": "ok",
+  "errno": 0
+}
+****************************后置操作****************************
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='pt1.1.28' class='hiddenRow'>
+    <td class='passCase'>
+        <div class='testcase'>test_步骤28</div>
+    </td>
+    <td style="color: #495057">
+        <div>测试接口</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.16 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_pt1.1.28')">pass</a>
+        <div id='div_pt1.1.28' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤28</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_pt1.1.28')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>pt1.1.28: 
+• 【用例】：
+测试接口
+• 【请求url】：
+GET https://www.lofter.com/trade/reward/isOpen
+• 【请求params】：
+{
+  "aa": "7",
+  "bb": "7"
+}
+• 【请求header】：
+{
+  "authority": "www.lofter.com",
+  "accept": "*/*",
+  "accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
+  "content-type": "application/x-www-from-urlencode; charset=utf-8",
+  "cookie": "firstentry=%2Flogin.do|https%3A%2F%2Fcn.bing.com%2F; usertrack=dZPgEWQnDJGVwTiYCFyTAg==; JSESSIONID-WLF-XXD=71cbf1fe7709bbf18f7e219c6a568a4852071518c6fbae82b6ce2d881c857ae52c6ae91a812be9f325cd79ffe0edc815e06fb817ef57a796e662ac649097663f9eb06cb0aad169da6e91d20c9c98df26a7a8d9c5d64c165355ecfc5986bd4d8055ee8ba3eaa56e2e2a3c38a97fc977f13cb157b2e97ae80854964fe8961d6228c5c615de; hb_MA-BFD7-963BF6846668_source=cn.bing.com; LOFTER-PHONE-LOGINNUM=13716619823; LOFTER-PHONE-LOGIN-FLAG=1; LOFTER-PHONE-LOGIN-AUTH=lwGPGyORwLT2t5NXaRrUKYbRdjJ8kNhVWTJTua34lZLzNkF1xL_kI-0uxDdWCnGBEn47J6uTWCeZXdJ03v44FGVgvwPCM9rq; token=lwGPGyORwLT2t5NXaRrUKYbRdjJ8kNhVWTJTua34lZLzNkF1xL_kI-0uxDdWCnGBEn47J6uTWCeZXdJ03v44FGVgvwPCM9rq; phone=13716619823; deviceid=c6795063-4931-4d8c-b4de-f00b2dc561eb; NTESwebSI=24C7BC6A9CC650522529C8AA8BE410D9.lofter-webapp-web-old-docker-lftpro-3-3nhsm-74f7b-5884fcc8p9lw7-8080; __LOFTER_TRACE_UID=C603B9391A6D4E8E904A9D8D3AA689CF#493026380#14; NEWTOKEN=YWEyM2UwMTFhMDUzMjY3ZjBkMzMxMGQ0MzEyNGJkMWQyZWFmNmRiMjY3ODNmNjg4YWZjYTk2OWIwZDczMzg5NTI3ZDIzOWNkNWUwZTFjYjVmZjY3YjJlZmYwYjQ5NDUx",
+  "referer": "https://www.lofter.com/",
+  "sec-ch-ua": "\"Chromium\";v=\"110\", \"Not A(Brand\";v=\"24\", \"Microsoft Edge\";v=\"110\"",
+  "sec-ch-ua-mobile": "?0",
+  "sec-ch-ua-platform": "\"Windows\"",
+  "sec-fetch-dest": "empty",
+  "sec-fetch-mode": "cors",
+  "sec-fetch-site": "same-origin",
+  "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36 Edg/110.0.1587.63"
+}
+• 【请求cookies】：
+{}
+• 【请求body】：
+{}
+• 【响应结果】：
+HTTP CODE: 200
+{
+  "code": 200,
+  "data": {
+    "inviteStatus": 0,
+    "openReward": 0,
+    "showReward": 0,
+    "status": 0
+  },
+  "msg": "success",
+  "ok": true
+}
+****************************后置操作****************************
+• 【断言】:
+Json提取失败：$.code
+• 【提取变量】:
+Json提取失败：$.msg
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.29' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤29</div>
+    </td>
+    <td style="color: #495057">
+        <div>新接口</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.29')">error</a>
+        <div id='div_et1.1.29' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤29</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.29')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.29: 
+• 【用例】：
+新接口
+• 【请求url】：
+GET http://127.0.0.1132132
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "D:\Python\Python310\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "D:\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001975384BDC0&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1132132', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001975384BDC0&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1132132', port=80): Max retries exceeded with url: / (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001975384BDC0&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.30' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤30</div>
+    </td>
+    <td style="color: #495057">
+        <div>222222</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.03 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.30')">error</a>
+        <div id='div_et1.1.30' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤30</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.30')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.30: 
+• 【用例】：
+222222
+• 【请求url】：
+GET http://127.0.0.1http://7
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\connection.py", line 61, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "D:\Python\Python310\lib\socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "D:\Python\Python310\lib\http\client.py", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\Python\Python310\lib\http\client.py", line 1037, in _send_output
+    self.send(msg)
+  File "D:\Python\Python310\lib\http\client.py", line 975, in send
+    self.connect()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: &lt;urllib3.connection.HTTPConnection object at 0x000001975384BA30&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\connectionpool.py", line 726, in urlopen
+    retries = retries.increment(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\urllib3\util\retry.py", line 446, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1http', port=80): Max retries exceeded with url: //7 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001975384BA30&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1http', port=80): Max retries exceeded with url: //7 (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x000001975384BA30&gt;: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+<tr id='et1.1.31' class='none'>
+    <td class='errorCase'>
+        <div class='testcase'>test_步骤31</div>
+    </td>
+    <td style="color: #495057">
+        <div>新接口</div>
+    </td>
+    <td style="color: #495057">
+        <div>0.00 s</div>
+    </td>
+    <td colspan='5' align='center' class='caseStatistics'>
+        <!--css div popup start-->
+        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_et1.1.31')">error</a>
+        <div id='div_et1.1.31' class="modal show" style="display: none; background-color: #000000c7;">
+            <div class="modal-dialog modal-dialog-centered log_window">
+                <div class="modal-content shadow-3">
+                    <div class="modal-header">
+                        <div>
+                            <h5 class="mb-1">test_步骤31</h5>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">detailed log</h5>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_et1.1.31')">X</button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <pre>et1.1.31: 
+• 【用例】：
+新接口
+• 【请求url】：
+GET 
+• 【请求params】：
+{}
+• 【请求header】：
+{}
+• 【请求cookies】：
+{}
+• 【请求body】：
+Traceback (most recent call last):
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 51, in test_case
+    raise e
+  File "D:\ProJect\vue3-django\backends\interface\test_run_case.py", line 49, in test_case
+    res = TestInterFace.s.request(**params, stream=True, verify=False, timeout=3)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 516, in request
+    prep = self.prepare_request(req)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\sessions.py", line 449, in prepare_request
+    p.prepare(
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 314, in prepare
+    self.prepare_url(url, params)
+  File "D:\ProJect\vue3-django\backends\venv\lib\site-packages\requests\models.py", line 388, in prepare_url
+    raise MissingSchema(error)
+requests.exceptions.MissingSchema: Invalid URL '': No schema supplied. Perhaps you meant http://?
+</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--css div popup end-->
+    </td>
+    <td></td>
+</tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer border-0 py-5">
+        <span class="text-muted text-sm">用例总数:
+            <button type="button" class="btn btn-sm bg-dark bg-opacity-20 bg-opacity-100-hover text-dark text-white-hover">31</button> =
+            <button type="button" class="btn btn-sm bg-success bg-opacity-20 bg-opacity-100-hover text-success text-white-hover">3</button> +
+            <button type="button" class="btn btn-sm bg-warning bg-opacity-20 bg-opacity-100-hover text-warning text-white-hover">0</button> +
+            <button type="button" class="btn btn-sm bg-danger bg-opacity-20 bg-opacity-100-hover text-danger text-white-hover">28</button> +
+            <button type="button" class="btn btn-sm bg-secondary bg-opacity-20 bg-opacity-100-hover text-secondary text-white-hover">0</button>
+        </span>
+    </div>
+</div>
+<div style="height:120px"></div>
+    
+
+
+<footer class="footer" style="height: 50px; position: fixed; width: 100%">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                XTestRunner 1.5.0; 2022 © 重定向科技 - http://itest.info
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
